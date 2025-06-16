@@ -7,7 +7,7 @@ import { useScrollPosition } from '../../hooks/useScrollPosition';
 
 const Logo: React.FC = () => (
   <a href="#hero" className="text-2xl font-bold font-poppins text-pomegranate-600 dark:text-pomegranate-400">
-    TechCorp
+    KÜ-Soluciones
   </a>
 );
 
