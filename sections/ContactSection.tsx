@@ -94,9 +94,9 @@ const ContactSection: React.FC = () => {
           <div>
             <h3 className="font-montserrat text-2xl font-semibold text-gray-800 dark:text-white mb-4">Información de Contacto</h3>
             <div className="space-y-3 font-opensans text-gray-700 dark:text-gray-300">
-              <p><strong>Email:</strong> <a href="mailto:info@techcorp.example" className="text-pomegranate-600 dark:text-pomegranate-400 hover:underline">info@techcorp.example</a></p>
-              <p><strong>Teléfono:</strong> <a href="tel:+1234567890" className="text-pomegranate-600 dark:text-pomegranate-400 hover:underline">+123 456 7890</a></p>
-              <p><strong>Dirección:</strong> Calle Falsa 123, Ciudad Tecnológica, País Digital</p>
+              <p><strong>Email:</strong> <a href="mailto:info@techcorp.example" className="text-pomegranate-600 dark:text-pomegranate-400 hover:underline">contacto@ku-soluciones.cl</a></p>
+              <p><strong>Teléfono:</strong> <a href="tel:+1234567890" className="text-pomegranate-600 dark:text-pomegranate-400 hover:underline"></a></p>
+              <p><strong>Dirección:</strong> </p>
             </div>
             <div className="mt-6">
                 <h4 className="font-montserrat text-lg font-semibold text-gray-800 dark:text-white mb-3">Síguenos</h4>

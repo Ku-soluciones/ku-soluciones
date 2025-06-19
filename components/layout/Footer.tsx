@@ -23,7 +23,7 @@ export const Footer: React.FC = () => {
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
-            <h3 className="text-xl font-bold font-poppins text-pomegranate-400 mb-4">TechCorp</h3>
+            <h3 className="text-xl font-bold font-poppins text-pomegranate-400 mb-4">Kü-Soluciones</h3>
             <p className="text-sm text-gray-400 leading-relaxed">
               Impulsando el futuro con soluciones tecnológicas innovadoras y personalizadas.
             </p>
@@ -47,8 +47,8 @@ export const Footer: React.FC = () => {
           </div>
           <div>
             <h4 className="text-lg font-semibold font-montserrat text-white mb-4">Contacto</h4>
-            <p className="text-sm text-gray-400">Email: info@techcorp.example</p>
-            <p className="text-sm text-gray-400">Teléfono: +123 456 7890</p>
+            <p className="text-sm text-gray-400">Email: contacto@ku-soluciones.cl</p>
+            <p className="text-sm text-gray-400"></p>
             <div className="flex space-x-4 mt-4">
               {socialLinks.map(({ Icon, href, label }) => (
                 <a key={label} href={href} aria-label={label} className="text-gray-400 hover:text-pomegranate-400 transition-colors duration-300">

@@ -14,21 +14,21 @@ interface Project {
 const portfolioData: Project[] = [
   {
     id: 'p1',
-    image: 'https://picsum.photos/seed/project1/400/300',
+    image: 'CE1.jpg',
     title: 'E-commerce Plataforma X',
     description: 'Desarrollo completo de una plataforma de e-commerce escalable con integraciones de pago y logística.',
     results: '+30% Conversión, +50% Ventas',
   },
   {
     id: 'p2',
-    image: 'https://picsum.photos/seed/project2/400/300',
+    image: 'CE2.jpg',
     title: 'App Móvil Financiera Y',
     description: 'Aplicación móvil intuitiva para gestión de finanzas personales, con altos estándares de seguridad.',
     results: '4.8 Estrellas Rating, 100K+ Descargas',
   },
   {
     id: 'p3',
-    image: 'https://picsum.photos/seed/project3/400/300',
+    image: 'CE3.jpg',
     title: 'Sistema de Gestión Interna Z',
     description: 'Solución SaaS para optimizar procesos internos y mejorar la productividad del equipo.',
     results: '-40% Tiempo en Tareas, +25% Eficiencia',
