@@ -70,10 +70,10 @@ const AboutSection: React.FC = () => {
           </div>
         </div>
         <div>
-          <img 
-            src="Kü.png"
-            alt="Equipo de TechCorp" 
-            className="rounded-xl shadow-lg w-full h-auto object-cover" 
+          <img
+            src="https://res.cloudinary.com/dmnxfatdu/image/upload/v1750342785/Ku-soluciones_amenq8.jpg"
+            alt="Equipo de Kü-Soluciones"
+            className="rounded-xl shadow-lg w-full h-auto object-cover"
             loading="lazy"
           />
         </div>

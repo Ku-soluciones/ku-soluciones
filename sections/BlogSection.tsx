@@ -18,27 +18,28 @@ const blogData: Article[] = [
     id: 'b1',
     image: 'Blog1.jpg',
     category: 'Desarrollo Web',
-    title: 'Las 5 Tendencias Clave en Desarrollo Web para 2025',
-    excerpt: 'Explora las tecnologías y enfoques que están definiendo el futuro del desarrollo web este año.',
-    link: '#',
+    title: 'Tendencias en Diseño Web para 2025',
+    excerpt: 'Descubre las tendencias que marcarán el diseño web este año: minimalismo, modo oscuro, y microinteracciones.',
+    link: 'https://www.latevaweb.com/diseno-web-2025?utm_source=chatgpt.com',
   },
   {
     id: 'b2',
     image: 'BlogIA.jpg',
     category: 'Inteligencia Artificial',
-    title: 'Cómo la IA está Transformando los Negocios Modernos',
-    excerpt: 'Un análisis profundo de las aplicaciones prácticas de la IA y su impacto en diversas industrias.',
-    link: '#',
+    title: 'La IA que Transforma los Negocios en España',
+    excerpt: 'Cómo la IA está mejorando la atención al cliente y eficiencia operativa en empresas ibéricas.',
+    link: 'https://cadenaser.com/aragon/2025/05/22/la-ia-podra-aumentar-en-3000-millones-de-euros-el-pib-en-aragon-segun-microsoft-radio-zaragoza/',
   },
   {
     id: 'b3',
     image: 'BLOGCS.jpg',
     category: 'Ciberseguridad',
-    title: 'Guía Esencial de Ciberseguridad para Pequeñas Empresas',
-    excerpt: 'Consejos prácticos para proteger tu negocio de las crecientes amenazas cibernéticas.',
-    link: '#',
+    title: 'Consejos de Ciberseguridad para PYMEs',
+    excerpt: 'Recomendaciones de seguridad esenciales para pequeñas y medianas empresas.',
+    link: 'https://cneris.com/es/protege-tu-pyme-consejos-esenciales-de-ciberseguridad/',
   },
 ];
+
 
 const BlogSection: React.FC = () => {
   return (
