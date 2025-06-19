@@ -15,7 +15,7 @@ interface Testimonial {
 const testimonialsData: Testimonial[] = [
   {
     id: 't1',
-    photo: 'https://picsum.photos/seed/client1/100/100',
+    photo: 'CE1.jpg',
     name: 'Ana Pérez',
     company: 'CEO, Innovatech Solutions',
     text: 'El equipo de TechCorp superó nuestras expectativas. Su profesionalismo y conocimiento técnico son impresionantes. ¡Altamente recomendados!',

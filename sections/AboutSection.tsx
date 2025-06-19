@@ -71,7 +71,7 @@ const AboutSection: React.FC = () => {
         </div>
         <div>
           <img 
-            src="https://picsum.photos/seed/team/600/400" 
+            src="Kü.png"
             alt="Equipo de TechCorp" 
             className="rounded-xl shadow-lg w-full h-auto object-cover" 
             loading="lazy"

@@ -16,15 +16,15 @@ interface Article {
 const blogData: Article[] = [
   {
     id: 'b1',
-    image: 'https://picsum.photos/seed/blog1/400/250',
+    image: 'Blog1.jpg',
     category: 'Desarrollo Web',
-    title: 'Las 5 Tendencias Clave en Desarrollo Web para 2024',
+    title: 'Las 5 Tendencias Clave en Desarrollo Web para 2025',
     excerpt: 'Explora las tecnologías y enfoques que están definiendo el futuro del desarrollo web este año.',
     link: '#',
   },
   {
     id: 'b2',
-    image: 'https://picsum.photos/seed/blog2/400/250',
+    image: 'BlogIA.jpg',
     category: 'Inteligencia Artificial',
     title: 'Cómo la IA está Transformando los Negocios Modernos',
     excerpt: 'Un análisis profundo de las aplicaciones prácticas de la IA y su impacto en diversas industrias.',
@@ -32,7 +32,7 @@ const blogData: Article[] = [
   },
   {
     id: 'b3',
-    image: 'https://picsum.photos/seed/blog3/400/250',
+    image: 'BLOGCS.jpg',
     category: 'Ciberseguridad',
     title: 'Guía Esencial de Ciberseguridad para Pequeñas Empresas',
     excerpt: 'Consejos prácticos para proteger tu negocio de las crecientes amenazas cibernéticas.',
