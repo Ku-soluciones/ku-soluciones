@@ -1,11 +1,8 @@
 import React from 'react';
 import { Container } from '../components/layout/Container';
 import { Button } from '../components/ui/Button';
-import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 const HeroSection: React.FC = () => {
-  const [ref, isVisible] = useIntersectionObserver<HTMLDivElement>({ threshold: 0.1, triggerOnce: true });
-
   const AnimatedShapes: React.FC = () => (
       <div className="absolute inset-0 overflow-hidden -z-10">
         <div className="absolute top-1/4 left-1/4 w-40 h-40 bg-gradient-to-br from-pomegranate-500 via-pomegranate-400 to-pomegranate-600 opacity-30 dark:opacity-20 rounded-full blur-xl animate-pulse" />
@@ -17,41 +14,82 @@ const HeroSection: React.FC = () => {
   return (
       <section
           id="hero"
-          ref={ref}
-          className={`relative min-h-screen flex items-center justify-center text-center text-white 
+          className="relative min-h-screen flex items-center justify-center text-center text-white 
                   bg-gradient-to-br from-pomegranate-600 via-pomegranate-700 to-pomegranate-800
                   dark:from-gray-900 dark:via-black dark:to-gray-950
-                  py-20 md:py-32 overflow-hidden ${isVisible ? 'section-visible' : 'section-hidden'}`}
+                  py-20 md:py-32 overflow-hidden"
       >
         <AnimatedShapes />
         <Container className="relative z-10">
-          <h1 className="font-poppins text-5xl md:text-7xl font-bold mb-6 drop-shadow-md">
-            Innovación Tecnológica a tu Alcance
+          {/* Badge de identificación */}
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
+            <span className="text-sm font-medium">🚀 Soluciones Tecnológicas para Pymes</span>
+          </div>
+
+          {/* Título principal más específico */}
+          <h1 className="font-poppins text-4xl md:text-6xl lg:text-7xl font-bold mb-6 drop-shadow-md">
+            Digitalizamos tu
+            <span className="block text-pomegranate-200">negocio</span>
           </h1>
-          <p className="font-roboto text-xl md:text-2xl font-medium mb-10 max-w-3xl mx-auto drop-shadow-sm">
-            Transformamos ideas en soluciones digitales de vanguardia que impulsan el crecimiento de tu negocio.
+
+          {/* Subtítulo más claro y específico */}
+          <p className="font-roboto text-lg md:text-xl lg:text-2xl font-medium mb-8 max-w-4xl mx-auto drop-shadow-sm">
+            Automatizamos procesos, creamos aplicaciones web y optimizamos operaciones para 
+            <span className="text-pomegranate-200 font-semibold"> pymes chilenas</span> que quieren crecer.
           </p>
+
+          {/* Beneficios rápidos */}
+          <div className="grid md:grid-cols-3 gap-4 mb-10 max-w-4xl mx-auto">
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+              <div className="text-2xl mb-2">⚡</div>
+              <h3 className="font-semibold mb-1">Automatización</h3>
+              <p className="text-sm opacity-90">Procesos más eficientes</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+              <div className="text-2xl mb-2">🌐</div>
+              <h3 className="font-semibold mb-1">Aplicaciones Web</h3>
+              <p className="text-sm opacity-90">Sistemas a medida</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+              <div className="text-2xl mb-2">📈</div>
+              <h3 className="font-semibold mb-1">Optimización</h3>
+              <p className="text-sm opacity-90">Mayor productividad</p>
+            </div>
+          </div>
+
+          {/* Call-to-action más específico */}
           <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
             <Button
                 variant="primary"
-                className="px-10 py-4 text-lg"
-                onClick={() => {
-                  const el = document.getElementById('services');
-                  if (el) el.scrollIntoView({ behavior: 'smooth' });
-                }}
-            >
-              Nuestros Servicios
-            </Button>
-            <Button
-                variant="secondary"
-                className="px-10 py-4 text-lg border-white text-white hover:bg-white hover:text-pomegranate-600 dark:border-pomegranate-400 dark:text-pomegranate-400 dark:hover:bg-pomegranate-400 dark:hover:text-gray-900"
+                className="px-10 py-4 text-lg font-semibold"
                 onClick={() => {
                   const el = document.getElementById('contact');
                   if (el) el.scrollIntoView({ behavior: 'smooth' });
                 }}
             >
-              Contáctanos
+              📞 Cotizar Solución
             </Button>
+            <Button
+                variant="secondary"
+                className="px-10 py-4 text-lg border-white text-white hover:bg-white hover:text-pomegranate-600 dark:border-pomegranate-400 dark:text-pomegranate-400 dark:hover:bg-pomegranate-400 dark:hover:text-gray-900"
+                onClick={() => {
+                  const el = document.getElementById('services');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }}
+            >
+              🔍 Ver Servicios
+            </Button>
+          </div>
+
+          {/* Trust indicators */}
+          <div className="mt-12 pt-8 border-t border-white/20">
+            <p className="text-sm opacity-80 mb-4">Empresas que confían en nosotros:</p>
+            <div className="flex justify-center items-center space-x-8 opacity-60">
+              <span className="text-sm">🏢 Logística</span>
+              <span className="text-sm">🛍️ Retail</span>
+              <span className="text-sm">🏭 Manufactura</span>
+              <span className="text-sm">💼 Servicios</span>
+            </div>
           </div>
         </Container>
       </section>

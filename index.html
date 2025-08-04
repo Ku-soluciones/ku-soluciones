@@ -1,17 +1,96 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Tech Corporate Website</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- SEO Meta Tags -->
+    <title>KU Soluciones - Desarrollo Web y Tecnología Moderna</title>
+    <meta name="description" content="KU Soluciones es una empresa líder en desarrollo web, aplicaciones móviles y soluciones tecnológicas innovadoras. Ofrecemos servicios de alta calidad con tecnología de vanguardia.">
+    <meta name="keywords" content="desarrollo web, aplicaciones móviles, tecnología, software, React, TypeScript, soluciones digitales, programación, diseño web">
+    <meta name="author" content="KU Soluciones">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Spanish">
+    <meta name="revisit-after" content="7 days">
+    <meta name="distribution" content="global">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="KU Soluciones - Desarrollo Web y Tecnología Moderna">
+    <meta property="og:description" content="KU Soluciones es una empresa líder en desarrollo web, aplicaciones móviles y soluciones tecnológicas innovadoras. Ofrecemos servicios de alta calidad con tecnología de vanguardia.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kusoluciones.com">
+    <meta property="og:image" content="https://kusoluciones.com/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="KU Soluciones">
+    <meta property="og:locale" content="es_ES">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="KU Soluciones - Desarrollo Web y Tecnología Moderna">
+    <meta name="twitter:description" content="KU Soluciones es una empresa líder en desarrollo web, aplicaciones móviles y soluciones tecnológicas innovadoras.">
+    <meta name="twitter:image" content="https://kusoluciones.com/twitter-image.jpg">
+    <meta name="twitter:site" content="@kusoluciones">
+    <meta name="twitter:creator" content="@kusoluciones">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="theme-color" content="#E74C3C">
+    <meta name="msapplication-TileColor" content="#E74C3C">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="KU Soluciones">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://kusoluciones.com">
+    
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600;700&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "KU Soluciones",
+      "url": "https://kusoluciones.com",
+      "logo": "https://kusoluciones.com/logo.png",
+      "description": "Empresa líder en desarrollo web, aplicaciones móviles y soluciones tecnológicas innovadoras",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "ES"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": "info@kusoluciones.com"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/kusoluciones",
+        "https://twitter.com/kusoluciones",
+        "https://github.com/kusoluciones"
+      ]
+    }
+    </script>
+    
     <script>
       tailwind.config = {
-        darkMode: 'class', // or 'media'
+        darkMode: 'class',
         theme: {
           extend: {
             colors: {
@@ -20,7 +99,7 @@
                 400: '#F1948A',
                 500: '#E74C3C',
                 600: '#C0392B',
-                700: '#A93226', // Added for hover states
+                700: '#A93226',
               },
             },
             fontFamily: {
@@ -34,6 +113,7 @@
         }
       }
     </script>
+    
     <style>
       /* Basic scrollbar styling for better aesthetics */
       ::-webkit-scrollbar {
@@ -45,24 +125,21 @@
         border-radius: 10px;
       }
       .dark ::-webkit-scrollbar-track {
-        background: #2d3748; /* gray-800 */
+        background: #2d3748;
       }
       ::-webkit-scrollbar-thumb {
-        background: #E74C3C; /* pomegranate-500 */
+        background: #E74C3C;
         border-radius: 10px;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #C0392B; /* pomegranate-600 */
+        background: #C0392B;
       }
-      /* Ensure html has dark class applied when needed */
       html.dark {
         color-scheme: dark;
       }
-      /* Smooth scroll behavior */
       html {
         scroll-behavior: smooth;
       }
-      /* Animated section visibility */
       .section-hidden {
         opacity: 0;
         transform: translateY(20px);
@@ -73,16 +150,17 @@
         transform: translateY(0);
       }
     </style>
-<script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.1.0/",
-    "react": "https://esm.sh/react@^19.1.0",
-    "react-dom/": "https://esm.sh/react-dom@^19.1.0/"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
+    
+    <script type="importmap">
+    {
+      "imports": {
+        "react/": "https://esm.sh/react@^19.1.0/",
+        "react": "https://esm.sh/react@^19.1.0",
+        "react-dom/": "https://esm.sh/react-dom@^19.1.0/"
+      }
+    }
+    </script>
+    <link rel="stylesheet" href="/index.css">
 </head>
 <body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 font-opensans transition-colors duration-300">
     <div id="root"></div>

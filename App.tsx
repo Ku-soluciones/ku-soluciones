@@ -1,10 +1,10 @@
 
 import React, { Suspense } from 'react';
 import { Header } from './components/layout/Header';
-import { Footer } from './components/layout/Footer';
+import Footer from './components/layout/Footer';
+import SEO from './components/SEO';
 import { useTheme } from './hooks/useTheme';
 
-// Lazy load sections for better performance
 const HeroSection = React.lazy(() => import('./sections/HeroSection'));
 const ServicesSection = React.lazy(() => import('./sections/ServicesSection'));
 const AboutSection = React.lazy(() => import('./sections/AboutSection'));
@@ -32,22 +32,30 @@ const App: React.FC = () => {
   }, [theme]);
 
   return (
-    <div className="flex flex-col min-h-screen">
-      <Header />
-      <main className="flex-grow">
-        <Suspense fallback={<LoadingFallback />}>
-          <HeroSection />
-          <ServicesSection />
-          <AboutSection />
-          <TechStackSection />
-          <PortfolioSection />
-          <TestimonialsSection />
-          <BlogSection />
-          <ContactSection />
-        </Suspense>
-      </main>
-      <Footer />
-    </div>
+    <>
+      <SEO 
+        title="KU Soluciones - Desarrollo Web y Tecnología Moderna"
+        description="KU Soluciones es una empresa líder en desarrollo web, aplicaciones móviles y soluciones tecnológicas innovadoras. Transformamos ideas en realidad digital."
+        keywords="desarrollo web, aplicaciones móviles, tecnología, software, React, TypeScript, soluciones digitales"
+        url="https://kusoluciones.com"
+      />
+      <div className="flex flex-col min-h-screen">
+        <Header />
+        <main className="flex-grow">
+          <Suspense fallback={<LoadingFallback />}>
+            <HeroSection />
+            <ServicesSection />
+            <AboutSection />
+            <TechStackSection />
+            <PortfolioSection />
+            <TestimonialsSection />
+            <BlogSection />
+            <ContactSection />
+          </Suspense>
+        </main>
+        <Footer />
+      </div>
+    </>
   );
 };
 
