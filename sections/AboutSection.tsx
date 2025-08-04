@@ -7,7 +7,7 @@ const AboutSection: React.FC = () => {
   const values = [
     {
       icon: '🎯',
-      title: 'Enfoque en Pymes',
+      title: 'Desarrolladores Tecnológicos en Chile',
       description: 'Entendemos los desafíos específicos de las pequeñas y medianas empresas chilenas.'
     },
     {
@@ -18,7 +18,7 @@ const AboutSection: React.FC = () => {
     {
       icon: '💰',
       title: 'Precios Accesibles',
-      description: 'Soluciones tecnológicas de calidad sin el precio de las grandes consultoras.'
+      description: 'Soluciones digitales personalizadas de calidad sin el precio de las grandes consultoras.'
     },
     {
       icon: '🤝',
@@ -28,8 +28,8 @@ const AboutSection: React.FC = () => {
   ];
 
   const industries = [
-    { name: 'Logística', icon: '🚚', description: 'Sistemas de tracking y gestión de flotas' },
-    { name: 'Retail', icon: '🛍️', description: 'E-commerce y gestión de inventarios' },
+    { name: 'Logística Chile', icon: '🚚', description: 'Sistemas de tracking y gestión de flotas' },
+    { name: 'Retail Nacional', icon: '🛍️', description: 'E-commerce y gestión de inventarios' },
     { name: 'Manufactura', icon: '🏭', description: 'Automatización de procesos productivos' },
     { name: 'Servicios', icon: '💼', description: 'Software de gestión empresarial' }
   ];
@@ -37,8 +37,8 @@ const AboutSection: React.FC = () => {
   return (
     <SectionWrapper
       id="about"
-      title="Somos Especialistas en Pymes Chilenas"
-      subtitle="Tecnología que entiende tu negocio"
+      title="Somos Desarrolladores Tecnológicos Especializados en Pymes Chilenas"
+      subtitle="Tecnología que entiende tu negocio en Chile"
     >
       <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
         <div>
@@ -46,12 +46,12 @@ const AboutSection: React.FC = () => {
             ¿Por qué elegirnos?
           </h3>
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-            Somos un equipo de desarrolladores y consultores especializados en 
-            <span className="font-semibold text-pomegranate-600 dark:text-pomegranate-400"> soluciones tecnológicas para pymes chilenas</span>. 
-            Entendemos que cada negocio es único y por eso desarrollamos soluciones personalizadas.
+            Somos un equipo de desarrolladores tecnológicos especializados en 
+            <span className="font-semibold text-pomegranate-600 dark:text-pomegranate-400"> soluciones digitales personalizadas para pymes chilenas</span>. 
+            Entendemos que cada negocio es único y por eso desarrollamos software a medida.
           </p>
           <p className="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-            Nuestra misión es democratizar la tecnología para que las pymes puedan competir 
+            Nuestra misión es democratizar la tecnología para que las pymes chilenas puedan competir 
             en igualdad de condiciones con las grandes empresas, sin los costos exorbitantes 
             de las consultoras tradicionales.
           </p>
@@ -60,7 +60,7 @@ const AboutSection: React.FC = () => {
           <div className="grid grid-cols-3 gap-4 mb-8">
             <div className="text-center">
               <div className="text-2xl font-bold text-pomegranate-600 dark:text-pomegranate-400">50+</div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">Pymes atendidas</div>
+              <div className="text-sm text-gray-600 dark:text-gray-400">Pymes chilenas atendidas</div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-pomegranate-600 dark:text-pomegranate-400">95%</div>
@@ -87,7 +87,7 @@ const AboutSection: React.FC = () => {
       {/* Industrias que atendemos */}
       <div className="text-center mb-8">
         <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">
-          Industrias que atendemos
+          Industrias que atendemos en Chile
         </h3>
         <p className="text-gray-600 dark:text-gray-300 mb-8">
           Tenemos experiencia en diversos sectores de la economía chilena
@@ -107,7 +107,7 @@ const AboutSection: React.FC = () => {
       {/* Proceso de trabajo */}
       <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-8">
         <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-6 text-center">
-          Nuestro Proceso
+          Nuestro Proceso para Desarrolladores Tecnológicos en Chile
         </h3>
         <div className="grid md:grid-cols-4 gap-6">
           <div className="text-center">
@@ -118,7 +118,7 @@ const AboutSection: React.FC = () => {
           <div className="text-center">
             <div className="w-12 h-12 bg-pomegranate-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold">2</div>
             <h4 className="font-semibold text-gray-800 dark:text-white mb-2">Propuesta</h4>
-            <p className="text-sm text-gray-600 dark:text-gray-400">Diseñamos una solución personalizada para tu negocio</p>
+            <p className="text-sm text-gray-600 dark:text-gray-400">Diseñamos una solución digital personalizada para tu negocio</p>
           </div>
           <div className="text-center">
             <div className="w-12 h-12 bg-pomegranate-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold">3</div>

@@ -3,16 +3,18 @@ import React, { Suspense } from 'react';
 import { Header } from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import SEO from './components/SEO';
+import FloatingWhatsApp from './components/ui/FloatingWhatsApp';
 import { useTheme } from './hooks/useTheme';
 
 const HeroSection = React.lazy(() => import('./sections/HeroSection'));
+const WhatWeDoSection = React.lazy(() => import('./sections/WhatWeDoSection'));
 const ServicesSection = React.lazy(() => import('./sections/ServicesSection'));
 const AboutSection = React.lazy(() => import('./sections/AboutSection'));
 const TechStackSection = React.lazy(() => import('./sections/TechStackSection'));
 const PortfolioSection = React.lazy(() => import('./sections/PortfolioSection'));
 const TestimonialsSection = React.lazy(() => import('./sections/TestimonialsSection'));
 const BlogSection = React.lazy(() => import('./sections/BlogSection'));
-const ContactSection = React.lazy(() => import('./sections/ContactSection'));
+const FinalCTASection = React.lazy(() => import('./sections/FinalCTASection'));
 
 const LoadingFallback: React.FC = () => (
   <div className="flex justify-center items-center h-screen bg-white dark:bg-gray-900">
@@ -44,16 +46,18 @@ const App: React.FC = () => {
         <main className="flex-grow">
           <Suspense fallback={<LoadingFallback />}>
             <HeroSection />
+            <WhatWeDoSection />
             <ServicesSection />
             <AboutSection />
             <TechStackSection />
             <PortfolioSection />
             <TestimonialsSection />
             <BlogSection />
-            <ContactSection />
+            <FinalCTASection />
           </Suspense>
         </main>
         <Footer />
+        <FloatingWhatsApp />
       </div>
     </>
   );

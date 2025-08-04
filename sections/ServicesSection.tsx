@@ -17,56 +17,56 @@ const servicesData: Service[] = [
   {
     id: 's1',
     icon: <ServiceIconExample className="w-10 h-10 text-pomegranate-600 dark:text-pomegranate-400 mb-4" />,
-    title: 'Automatización de Procesos',
-    description: 'Eliminamos tareas repetitivas y optimizamos flujos de trabajo para pymes.',
+    title: 'Automatización de procesos en Chile',
+    description: 'Eliminamos tareas repetitivas y optimizamos flujos de trabajo para pymes chilenas.',
     link: '#automatizacion',
-    details: 'Desarrollamos sistemas que automatizan procesos internos como facturación, inventario, reportes y gestión de clientes.',
+    details: 'Desarrollamos sistemas que automatizan procesos internos como facturación, inventario, reportes y gestión de clientes específicos para empresas chilenas.',
     benefits: ['Reducción de errores', 'Ahorro de tiempo', 'Mayor eficiencia']
   },
   {
     id: 's2',
     icon: <ServiceIconExample className="w-10 h-10 text-pomegranate-600 dark:text-pomegranate-400 mb-4" />,
-    title: 'Sistemas de Gestión',
-    description: 'Creamos software a medida para administrar tu negocio de forma integral.',
+    title: 'Software a medida para pymes',
+    description: 'Creamos software personalizado para administrar tu negocio de forma integral.',
     link: '#sistemas-gestion',
-    details: 'Desarrollamos sistemas completos que integran ventas, inventario, clientes y finanzas en una sola plataforma.',
+    details: 'Desarrollamos sistemas completos que integran ventas, inventario, clientes y finanzas en una sola plataforma adaptada a las necesidades chilenas.',
     benefits: ['Control total', 'Datos centralizados', 'Reportes automáticos']
   },
   {
     id: 's3',
     icon: <ServiceIconExample className="w-10 h-10 text-pomegranate-600 dark:text-pomegranate-400 mb-4" />,
-    title: 'E-commerce y Tiendas Online',
+    title: 'Soluciones digitales personalizadas',
     description: 'Convertimos tu negocio físico en una plataforma digital de ventas.',
     link: '#ecommerce',
-    details: 'Creamos tiendas online completas con pasarelas de pago, gestión de inventario y análisis de ventas.',
+    details: 'Creamos tiendas online completas con pasarelas de pago, gestión de inventario y análisis de ventas para el mercado chileno.',
     benefits: ['Ventas 24/7', 'Alcance nacional', 'Menos costos fijos']
   },
   {
     id: 's4',
     icon: <ServiceIconExample className="w-10 h-10 text-pomegranate-600 dark:text-pomegranate-400 mb-4" />,
-    title: 'Aplicaciones Móviles',
+    title: 'Aplicaciones móviles para Chile',
     description: 'Apps para que tus clientes y empleados accedan desde cualquier lugar.',
     link: '#apps-moviles',
-    details: 'Desarrollamos aplicaciones nativas para iOS y Android que conectan con tus sistemas existentes.',
+    details: 'Desarrollamos aplicaciones nativas para iOS y Android que conectan con tus sistemas existentes y se adaptan al mercado chileno.',
     benefits: ['Acceso móvil', 'Mejor experiencia', 'Mayor engagement']
   },
   {
     id: 's5',
     icon: <ServiceIconExample className="w-10 h-10 text-pomegranate-600 dark:text-pomegranate-400 mb-4" />,
-    title: 'Migración a la Nube',
+    title: 'Migración a la nube en Chile',
     description: 'Movemos tus sistemas a la nube para mayor seguridad y flexibilidad.',
     link: '#cloud',
-    details: 'Migramos tus aplicaciones y datos a servidores cloud con respaldos automáticos y alta disponibilidad.',
+    details: 'Migramos tus aplicaciones y datos a servidores cloud con respaldos automáticos y alta disponibilidad para empresas chilenas.',
     benefits: ['Seguridad mejorada', 'Escalabilidad', 'Menos mantenimiento']
   },
   {
     id: 's6',
     icon: <ServiceIconExample className="w-10 h-10 text-pomegranate-600 dark:text-pomegranate-400 mb-4" />,
-    title: 'Soporte y Mantenimiento',
+    title: 'Soporte técnico en Chile',
     description: 'Acompañamiento continuo para que tus sistemas funcionen perfectamente.',
     link: '#soporte',
-    details: 'Ofrecemos soporte técnico, actualizaciones de seguridad y mantenimiento preventivo de tus sistemas.',
-    benefits: ['Funcionamiento 24/7', 'Actualizaciones automáticas', 'Soporte técnico']
+    details: 'Ofrecemos soporte técnico, actualizaciones de seguridad y mantenimiento preventivo de tus sistemas con atención local.',
+    benefits: ['Funcionamiento 24/7', 'Actualizaciones automáticas', 'Soporte técnico local']
   },
 ];
 
@@ -76,16 +76,16 @@ const ServicesSection: React.FC = () => {
   return (
       <SectionWrapper
           id="services"
-          title="Soluciones para Pymes Chilenas"
-          subtitle="Tecnología que se adapta a tu negocio"
+          title="Soluciones Digitales Personalizadas para Pymes Chilenas"
+          subtitle="Tecnología que se adapta a tu negocio en Chile"
           className="bg-gray-50 dark:bg-gray-800"
       >
-        {/* Introducción específica */}
+        {/* Introducción específica optimizada */}
         <div className="text-center mb-12 max-w-4xl mx-auto">
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
             Entendemos los desafíos de las pymes chilenas. Por eso desarrollamos 
-            <span className="font-semibold text-pomegranate-600 dark:text-pomegranate-400"> soluciones tecnológicas</span> 
-            que se adaptan a tu presupuesto y necesidades específicas.
+            <span className="font-semibold text-pomegranate-600 dark:text-pomegranate-400"> soluciones digitales personalizadas</span> 
+            que se adaptan a tu presupuesto y necesidades específicas en Chile.
           </p>
           <div className="grid md:grid-cols-3 gap-6 text-sm">
             <div className="bg-white dark:bg-gray-700 p-4 rounded-lg">
@@ -139,7 +139,7 @@ const ServicesSection: React.FC = () => {
                       </p>
                       <button
                         onClick={() => {
-                          const el = document.getElementById('contact');
+                          const el = document.getElementById('final-cta');
                           if (el) el.scrollIntoView({ behavior: 'smooth' });
                         }}
                         className="w-full bg-pomegranate-600 hover:bg-pomegranate-700 text-white text-sm font-semibold py-2 px-4 rounded-lg transition-colors duration-200"
@@ -152,17 +152,17 @@ const ServicesSection: React.FC = () => {
           ))}
         </div>
 
-        {/* Call-to-action específico */}
+        {/* Call-to-action específico optimizado */}
         <div className="text-center mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
           <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">
-            ¿No encuentras lo que buscas?
+            ¿Necesitas desarrolladores tecnológicos en Chile?
           </h3>
           <p className="text-gray-600 dark:text-gray-300 mb-6">
-            Desarrollamos soluciones personalizadas para necesidades específicas de tu industria.
+            Desarrollamos soluciones digitales personalizadas para necesidades específicas de tu industria en Chile.
           </p>
           <button
             onClick={() => {
-              const el = document.getElementById('contact');
+              const el = document.getElementById('final-cta');
               if (el) el.scrollIntoView({ behavior: 'smooth' });
             }}
             className="bg-pomegranate-600 hover:bg-pomegranate-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200"
