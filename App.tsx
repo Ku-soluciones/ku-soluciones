@@ -5,6 +5,7 @@ import Footer from './components/layout/Footer';
 import SEO from './components/SEO';
 import FloatingWhatsApp from './components/ui/FloatingWhatsApp';
 import { useTheme } from './hooks/useTheme';
+import { useActiveSection } from './hooks/useActiveSection';
 
 const HeroSection = React.lazy(() => import('./sections/HeroSection'));
 const WhatWeDoSection = React.lazy(() => import('./sections/WhatWeDoSection'));
@@ -24,6 +25,7 @@ const LoadingFallback: React.FC = () => (
 
 const App: React.FC = () => {
   const { theme } = useTheme();
+  const activeSection = useActiveSection();
 
   React.useEffect(() => {
     if (theme === 'dark') {
@@ -36,10 +38,11 @@ const App: React.FC = () => {
   return (
     <>
       <SEO 
-        title="KU Soluciones - Desarrollo Web y Tecnología Moderna"
-        description="KU Soluciones es una empresa líder en desarrollo web, aplicaciones móviles y soluciones tecnológicas innovadoras. Transformamos ideas en realidad digital."
-        keywords="desarrollo web, aplicaciones móviles, tecnología, software, React, TypeScript, soluciones digitales"
+        title="KU Soluciones - Software a Medida para Pymes en Chile"
+        description="Especialistas en automatización de procesos en Chile y soluciones digitales personalizadas. Desarrollamos software a medida para pymes que quieren crecer con tecnología."
+        keywords="software a medida para pymes, automatización de procesos en Chile, desarrolladores tecnológicos en Chile, soluciones digitales personalizadas"
         url="https://kusoluciones.com"
+        showOrganizationData={true}
       />
       <div className="flex flex-col min-h-screen">
         <Header />

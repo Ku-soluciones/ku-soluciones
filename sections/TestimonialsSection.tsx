@@ -2,80 +2,164 @@
 import React from 'react';
 import SectionWrapper from './SectionWrapper';
 import { Card } from '../components/ui/Card';
-
-interface Testimonial {
-  id: string;
-  photo: string;
-  name: string;
-  company: string;
-  text: string;
-  rating: number; // 1-5 stars
-}
-
-const testimonialsData: Testimonial[] = [
-  {
-    id: 't1',
-    photo: 'CE1.jpg',
-    name: 'Ana Pérez',
-    company: 'CEO, Innovatech Solutions',
-    text: 'El equipo de TechCorp superó nuestras expectativas. Su profesionalismo y conocimiento técnico son impresionantes. ¡Altamente recomendados!',
-    rating: 5,
-  },
-  {
-    id: 't2',
-    photo: 'https://picsum.photos/seed/client2/100/100',
-    name: 'Carlos López',
-    company: 'CTO, Future Systems',
-    text: 'Trabajar con TechCorp fue una experiencia transformadora. Entendieron nuestras necesidades a la perfección y entregaron un producto de calidad excepcional.',
-    rating: 5,
-  },
-  {
-    id: 't3',
-    photo: 'https://picsum.photos/seed/client3/100/100',
-    name: 'Laura Gómez',
-    company: 'Marketing Manager, Connecta Global',
-    text: 'Su enfoque en la experiencia de usuario y la atención al detalle marcaron la diferencia. Nuestro nuevo sitio web es un éxito.',
-    rating: 4,
-  },
-];
-
-const StarRating: React.FC<{ rating: number }> = ({ rating }) => (
-  <div className="flex text-yellow-400">
-    {[...Array(5)].map((_, i) => (
-      <svg key={i} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill={i < rating ? "currentColor" : "none"} stroke="currentColor" strokeWidth={i < rating ? 0 : 1.5} className="w-5 h-5">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.82.61l-4.725-2.885a.562.562 0 0 0-.652 0l-4.725 2.885a.562.562 0 0 1-.82-.61l1.285-5.385a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
-      </svg>
-    ))}
-  </div>
-);
-
+import Breadcrumbs from '../components/ui/Breadcrumbs';
 
 const TestimonialsSection: React.FC = () => {
+  const testimonials = [
+    {
+      id: 1,
+      name: 'María González',
+      position: 'CEO',
+      company: 'Logística Express Chile',
+      content: 'KU Soluciones transformó completamente nuestros procesos. El sistema de gestión logística que desarrollaron nos permitió reducir costos en un 30% y mejorar la eficiencia de nuestras rutas.',
+      rating: 5,
+      industry: 'Logística'
+    },
+    {
+      id: 2,
+      name: 'Carlos Rodríguez',
+      position: 'Gerente General',
+      company: 'Retail Nacional',
+      content: 'La plataforma de e-commerce que crearon superó todas nuestras expectativas. Las ventas online aumentaron un 150% en el primer mes y la experiencia del cliente mejoró significativamente.',
+      rating: 5,
+      industry: 'Retail'
+    },
+    {
+      id: 3,
+      name: 'Ana Silva',
+      position: 'Directora de Operaciones',
+      company: 'Manufactura Industrial',
+      content: 'La automatización de nuestros procesos productivos fue un antes y después para nuestra empresa. Redujimos defectos en un 50% y aumentamos la productividad en un 25%.',
+      rating: 5,
+      industry: 'Manufactura'
+    }
+  ];
+
   return (
-    <SectionWrapper 
-      id="testimonials" 
+    <SectionWrapper
+      id="testimonials"
       title="Lo que Dicen Nuestros Clientes"
-      subtitle="La satisfacción de nuestros clientes es nuestra mayor recompensa"
-      className="bg-gray-50 dark:bg-gray-800"
+      subtitle="Testimonios de pymes chilenas que han transformado sus negocios"
     >
-      <div className="flex overflow-x-auto space-x-6 pb-8 scrollbar-thin scrollbar-thumb-pomegranate-500 scrollbar-track-pomegranate-200 dark:scrollbar-thumb-pomegranate-400 dark:scrollbar-track-gray-700">
-        {testimonialsData.map((testimonial) => (
-          <div key={testimonial.id} className="flex-shrink-0 w-80 md:w-96">
-            <Card className="h-full flex flex-col items-center text-center hover:shadow-xl dark:hover:shadow-pomegranate-500/30">
-              <img src={testimonial.photo} alt={testimonial.name} className="w-24 h-24 rounded-full object-cover mb-4 shadow-md" loading="lazy" />
-              <h3 className="font-montserrat text-lg font-semibold text-gray-800 dark:text-white">{testimonial.name}</h3>
-              <p className="font-notosans text-sm text-pomegranate-600 dark:text-pomegranate-400 mb-2">{testimonial.company}</p>
-              <StarRating rating={testimonial.rating} />
-              <p className="font-opensans text-sm text-gray-600 dark:text-gray-400 mt-4 leading-relaxed flex-grow">
-                "{testimonial.text}"
-              </p>
-            </Card>
-          </div>
+      {/* Breadcrumbs */}
+      <Breadcrumbs
+        items={[
+          { name: 'Testimonios', url: '#testimonials' }
+        ]}
+        currentPage="Opiniones Clientes"
+      />
+
+      <div className="text-center mb-12">
+        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          Más de 50 pymes chilenas confían en nuestras soluciones digitales personalizadas. 
+          Conoce las experiencias de algunos de nuestros clientes satisfechos.
+        </p>
+      </div>
+
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {testimonials.map((testimonial) => (
+          <Card key={testimonial.id} className="p-6 hover:shadow-xl transition-all duration-300 hover:scale-105">
+            {/* Rating */}
+            <div className="flex mb-4">
+              {[...Array(testimonial.rating)].map((_, index) => (
+                <span key={index} className="text-yellow-400">⭐</span>
+              ))}
+            </div>
+            
+            {/* Content */}
+            <blockquote className="text-gray-700 dark:text-gray-300 mb-6 italic">
+              "{testimonial.content}"
+            </blockquote>
+            
+            {/* Author */}
+            <div className="flex items-center">
+              <div className="w-12 h-12 bg-gradient-to-br from-pomegranate-500 to-pomegranate-700 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+                {testimonial.name.charAt(0)}
+              </div>
+              <div>
+                <div className="font-semibold text-gray-800 dark:text-white">
+                  {testimonial.name}
+                </div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">
+                  {testimonial.position}, {testimonial.company}
+                </div>
+                <div className="text-xs text-pomegranate-600 dark:text-pomegranate-400 font-medium">
+                  {testimonial.industry}
+                </div>
+              </div>
+            </div>
+          </Card>
         ))}
       </div>
-      <p className="text-center mt-8 text-sm text-gray-500 dark:text-gray-400">
-        Desliza para ver más testimonios &rarr;
-      </p>
+
+      {/* Estadísticas de satisfacción */}
+      <div className="mt-16 bg-gray-50 dark:bg-gray-800 rounded-xl p-8">
+        <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-8 text-center">
+          Nuestros Números Hablan por Sí Solos
+        </h3>
+        <div className="grid md:grid-cols-4 gap-6 text-center">
+          <div>
+            <div className="text-3xl font-bold text-pomegranate-600 dark:text-pomegranate-400 mb-2">95%</div>
+            <div className="text-sm text-gray-600 dark:text-gray-400">Satisfacción Cliente</div>
+          </div>
+          <div>
+            <div className="text-3xl font-bold text-pomegranate-600 dark:text-pomegranate-400 mb-2">50+</div>
+            <div className="text-sm text-gray-600 dark:text-gray-400">Clientes Satisfechos</div>
+          </div>
+          <div>
+            <div className="text-3xl font-bold text-pomegranate-600 dark:text-pomegranate-400 mb-2">4.9/5</div>
+            <div className="text-sm text-gray-600 dark:text-gray-400">Rating Promedio</div>
+          </div>
+          <div>
+            <div className="text-3xl font-bold text-pomegranate-600 dark:text-pomegranate-400 mb-2">100%</div>
+            <div className="text-sm text-gray-600 dark:text-gray-400">Proyectos Entregados</div>
+          </div>
+        </div>
+      </div>
+
+      {/* Industrias atendidas */}
+      <div className="mt-12">
+        <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-6 text-center">
+          Industrias que Atendemos
+        </h3>
+        <div className="grid md:grid-cols-4 gap-4">
+          {[
+            { name: 'Logística', icon: '🚚', clients: 15 },
+            { name: 'Retail', icon: '🛍️', clients: 12 },
+            { name: 'Manufactura', icon: '🏭', clients: 8 },
+            { name: 'Servicios', icon: '💼', clients: 15 }
+          ].map((industry, index) => (
+            <div key={index} className="text-center p-4 bg-white dark:bg-gray-700 rounded-lg hover:shadow-lg transition-shadow duration-300">
+              <div className="text-3xl mb-2">{industry.icon}</div>
+              <h4 className="font-semibold text-gray-800 dark:text-white mb-1">
+                {industry.name}
+              </h4>
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                {industry.clients} clientes
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Call-to-action */}
+      <div className="text-center mt-12">
+        <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">
+          ¿Quieres ser nuestro próximo cliente satisfecho?
+        </h3>
+        <p className="text-gray-600 dark:text-gray-300 mb-6">
+          Únete a las más de 50 pymes chilenas que ya han transformado sus negocios con nuestras soluciones.
+        </p>
+        <button
+          onClick={() => {
+            const el = document.getElementById('final-cta');
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+          }}
+          className="bg-pomegranate-600 hover:bg-pomegranate-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200"
+        >
+          📞 Agendar consulta gratuita
+        </button>
+      </div>
     </SectionWrapper>
   );
 };
