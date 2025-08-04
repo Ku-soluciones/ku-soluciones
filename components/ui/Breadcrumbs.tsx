@@ -1,74 +1,87 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
 
 interface BreadcrumbItem {
-  label: string;
-  path: string;
+  name: string;
+  url: string;
 }
 
-const Breadcrumbs: React.FC = () => {
-  const location = useLocation();
-  const pathnames = location.pathname.split('/').filter((x) => x);
+interface BreadcrumbsProps {
+  items: BreadcrumbItem[];
+  currentPage: string;
+}
 
-  const breadcrumbMap: { [key: string]: string } = {
-    servicios: 'Servicios',
-    'sobre-nosotros': 'Sobre Nosotros',
-    portafolio: 'Portafolio',
-    blog: 'Blog',
-    contacto: 'Contacto',
-    'desarrollo-web': 'Desarrollo Web',
+const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, currentPage }) => {
+  // Generar datos estructurados para Schema.org
+  const generateStructuredData = () => {
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://kusoluciones.com/"
+        },
+        ...items.map((item, index) => ({
+          "@type": "ListItem",
+          "position": index + 2,
+          "name": item.name,
+          "item": `https://kusoluciones.com${item.url}`
+        })),
+        {
+          "@type": "ListItem",
+          "position": items.length + 2,
+          "name": currentPage,
+          "item": `https://kusoluciones.com${items[items.length - 1]?.url || '/'}`
+        }
+      ]
+    };
+
+    return JSON.stringify(structuredData);
   };
 
-  const breadcrumbs: BreadcrumbItem[] = [
-    { label: 'Inicio', path: '/' },
-  ];
-
-  let currentPath = '';
-  pathnames.forEach((name) => {
-    currentPath += `/${name}`;
-    const label = breadcrumbMap[name] || name.charAt(0).toUpperCase() + name.slice(1);
-    breadcrumbs.push({ label, path: currentPath });
-  });
-
-  // No mostrar breadcrumbs en la página de inicio
-  if (breadcrumbs.length <= 1) {
-    return null;
-  }
-
   return (
-    <nav className="bg-gray-50 dark:bg-gray-800 py-3 px-4 rounded-lg mb-6" aria-label="Breadcrumb">
-      <ol className="flex items-center space-x-2 text-sm">
-        {breadcrumbs.map((item, index) => (
-          <li key={item.path} className="flex items-center">
-            {index > 0 && (
-              <svg
-                className="w-4 h-4 text-gray-400 mx-2"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            )}
-            {index === breadcrumbs.length - 1 ? (
-              <span className="text-gray-900 dark:text-white font-medium">
-                {item.label}
-              </span>
-            ) : (
-              <Link
-                to={item.path}
-                className="text-gray-500 dark:text-gray-400 hover:text-pomegranate-600 dark:hover:text-pomegranate-400 transition-colors duration-200"
-              >
-                {item.label}
-              </Link>
-            )}
+    <>
+      {/* Datos estructurados Schema.org */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: generateStructuredData() }}
+      />
+      
+      {/* Breadcrumbs visuales */}
+      <nav aria-label="Breadcrumb" className="py-4">
+        <ol className="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400">
+          <li>
+            <a 
+              href="/" 
+              className="hover:text-pomegranate-600 dark:hover:text-pomegranate-400 transition-colors duration-200"
+            >
+              Inicio
+            </a>
           </li>
-        ))}
-      </ol>
-    </nav>
+          
+          {items.map((item, index) => (
+            <li key={index} className="flex items-center">
+              <span className="mx-2 text-gray-400">/</span>
+              <a 
+                href={item.url}
+                className="hover:text-pomegranate-600 dark:hover:text-pomegranate-400 transition-colors duration-200"
+              >
+                {item.name}
+              </a>
+            </li>
+          ))}
+          
+          <li className="flex items-center">
+            <span className="mx-2 text-gray-400">/</span>
+            <span className="text-gray-800 dark:text-gray-200 font-medium">
+              {currentPage}
+            </span>
+          </li>
+        </ol>
+      </nav>
+    </>
   );
 };
 

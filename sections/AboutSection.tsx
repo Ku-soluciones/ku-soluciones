@@ -2,6 +2,7 @@
 import React from 'react';
 import SectionWrapper from './SectionWrapper';
 import { Card } from '../components/ui/Card';
+import Breadcrumbs from '../components/ui/Breadcrumbs';
 
 const AboutSection: React.FC = () => {
   const values = [
@@ -40,22 +41,30 @@ const AboutSection: React.FC = () => {
       title="Somos Desarrolladores Tecnológicos Especializados en Pymes Chilenas"
       subtitle="Tecnología que entiende tu negocio en Chile"
     >
+      {/* Breadcrumbs */}
+      <Breadcrumbs
+        items={[
+          { name: 'Nosotros', url: '#about' }
+        ]}
+        currentPage="Quiénes Somos"
+      />
+
       <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
         <div>
           <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-6">
             ¿Por qué elegirnos?
           </h3>
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-            Somos un equipo de desarrolladores tecnológicos especializados en 
-            <span className="font-semibold text-pomegranate-600 dark:text-pomegranate-400"> soluciones digitales personalizadas para pymes chilenas</span>. 
+            Somos un equipo de desarrolladores tecnológicos especializados en
+            <span className="font-semibold text-pomegranate-600 dark:text-pomegranate-400"> soluciones digitales personalizadas para pymes chilenas</span>.
             Entendemos que cada negocio es único y por eso desarrollamos software a medida.
           </p>
           <p className="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-            Nuestra misión es democratizar la tecnología para que las pymes chilenas puedan competir 
-            en igualdad de condiciones con las grandes empresas, sin los costos exorbitantes 
+            Nuestra misión es democratizar la tecnología para que las pymes chilenas puedan competir
+            en igualdad de condiciones con las grandes empresas, sin los costos exorbitantes
             de las consultoras tradicionales.
           </p>
-          
+
           {/* Estadísticas */}
           <div className="grid grid-cols-3 gap-4 mb-8">
             <div className="text-center">

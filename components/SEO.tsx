@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import OrganizationStructuredData from './SEO/OrganizationStructuredData';
 
 interface SEOProps {
   title?: string;
@@ -12,6 +13,7 @@ interface SEOProps {
   modifiedTime?: string;
   section?: string;
   tags?: string[];
+  showOrganizationData?: boolean;
 }
 
 const SEO: React.FC<SEOProps> = ({
@@ -25,7 +27,8 @@ const SEO: React.FC<SEOProps> = ({
   publishedTime,
   modifiedTime,
   section,
-  tags = []
+  tags = [],
+  showOrganizationData = true
 }) => {
   useEffect(() => {
     // Actualizar el título de la página
@@ -56,6 +59,10 @@ const SEO: React.FC<SEOProps> = ({
     updateMetaTag('description', description);
     updateMetaTag('keywords', keywords);
     updateMetaTag('author', author);
+    updateMetaTag('robots', 'index, follow');
+    updateMetaTag('language', 'es');
+    updateMetaTag('geo.region', 'CL');
+    updateMetaTag('geo.placename', 'Santiago, Chile');
 
     // Open Graph tags
     updatePropertyTag('og:title', title);
@@ -64,11 +71,14 @@ const SEO: React.FC<SEOProps> = ({
     updatePropertyTag('og:url', url);
     updatePropertyTag('og:image', image);
     updatePropertyTag('og:site_name', 'KU Soluciones');
+    updatePropertyTag('og:locale', 'es_CL');
 
     // Twitter Card tags
     updatePropertyTag('twitter:title', title);
     updatePropertyTag('twitter:description', description);
     updatePropertyTag('twitter:image', image);
+    updatePropertyTag('twitter:card', 'summary_large_image');
+    updatePropertyTag('twitter:site', '@kusoluciones');
 
     // Canonical URL
     let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
@@ -79,9 +89,47 @@ const SEO: React.FC<SEOProps> = ({
     }
     canonical.href = url;
 
+    // Datos estructurados adicionales para la página
+    const generatePageStructuredData = () => {
+      const structuredData = {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": title,
+        "description": description,
+        "url": url,
+        "inLanguage": "es-CL",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "KU Soluciones",
+          "url": "https://kusoluciones.com"
+        },
+        "about": {
+          "@type": "Organization",
+          "name": "KU Soluciones",
+          "description": "Especialistas en automatización de procesos en Chile y soluciones digitales personalizadas para pymes chilenas."
+        }
+      };
+
+      return JSON.stringify(structuredData);
+    };
+
+    // Agregar datos estructurados de la página
+    let pageStructuredData = document.querySelector('script[data-structured="page"]') as HTMLScriptElement;
+    if (!pageStructuredData) {
+      pageStructuredData = document.createElement('script');
+      pageStructuredData.type = 'application/ld+json';
+      pageStructuredData.setAttribute('data-structured', 'page');
+      document.head.appendChild(pageStructuredData);
+    }
+    pageStructuredData.innerHTML = generatePageStructuredData();
+
   }, [title, description, keywords, image, url, type, author, publishedTime, modifiedTime, section, tags]);
 
-  return null; // Este componente no renderiza nada
+  return (
+    <>
+      {showOrganizationData && <OrganizationStructuredData />}
+    </>
+  );
 };
 
 export default SEO; 
