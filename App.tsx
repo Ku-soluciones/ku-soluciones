@@ -2,6 +2,7 @@
 import React, { Suspense } from 'react';
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
+import { Chatbot } from './components/ui/Chatbot';
 import { useTheme } from './hooks/useTheme';
 
 // Lazy load sections for better performance
@@ -47,6 +48,7 @@ const App: React.FC = () => {
         </Suspense>
       </main>
       <Footer />
+      <Chatbot />
     </div>
   );
 };
