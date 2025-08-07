@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import SectionWrapper from './SectionWrapper';
 import { Button } from '../components/ui/Button';
-import { LinkedInIcon, TwitterIcon, GithubIcon } from '../components/ui/Icon';
+import { LinkedInIcon, FacebookIcon, InstagramIcon } from '../components/ui/Icon';
 
 const ContactSection: React.FC = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -23,9 +23,9 @@ const ContactSection: React.FC = () => {
   };
 
   const socialLinks = [
+    { Icon: FacebookIcon, href: '#', label: 'Facebook' },
+    { Icon: InstagramIcon, href: 'https://www.instagram.com/ku_soluciones/', label: 'Instagram' },
     { Icon: LinkedInIcon, href: '#', label: 'LinkedIn' },
-    { Icon: TwitterIcon, href: '#', label: 'Twitter' },
-    { Icon: GithubIcon, href: '#', label: 'GitHub' },
   ];
 
   return (
@@ -95,8 +95,8 @@ const ContactSection: React.FC = () => {
             <h3 className="font-montserrat text-2xl font-semibold text-gray-800 dark:text-white mb-4">Información de Contacto</h3>
             <div className="space-y-3 font-opensans text-gray-700 dark:text-gray-300">
               <p><strong>Email:</strong> <a href="mailto:info@techcorp.example" className="text-pomegranate-600 dark:text-pomegranate-400 hover:underline">contacto@ku-soluciones.cl</a></p>
-              <p><strong>Teléfono:</strong> <a href="tel:+1234567890" className="text-pomegranate-600 dark:text-pomegranate-400 hover:underline"></a></p>
-              <p><strong>Dirección:</strong> </p>
+              <p><strong>Teléfono:</strong> <a href="tel:+56983620169" className="text-pomegranate-600 dark:text-pomegranate-400 hover:underline">+56 9 8362 0169</a></p>
+              <p><strong>Dirección:</strong> Palqui 2916, Ñuñoa</p>
             </div>
             <div className="mt-6">
                 <h4 className="font-montserrat text-lg font-semibold text-gray-800 dark:text-white mb-3">Síguenos</h4>
@@ -107,21 +107,6 @@ const ContactSection: React.FC = () => {
                     </a>
                 ))}
                 </div>
-            </div>
-          </div>
-          
-          <div>
-            <h3 className="font-montserrat text-2xl font-semibold text-gray-800 dark:text-white mb-4">Nuestra Ubicación</h3>
-            {/* Google Maps Placeholder */}
-            <div className="aspect-w-16 aspect-h-9 bg-gray-300 dark:bg-gray-600 rounded-lg shadow-md overflow-hidden">
-              {/* Replace with actual Google Maps iframe or React component */}
-              <div className="w-full h-full flex items-center justify-center text-gray-500 dark:text-gray-400">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12 mr-2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-                </svg>
-                <span>Mapa de Ubicación (Placeholder)</span>
-              </div>
             </div>
           </div>
         </div>

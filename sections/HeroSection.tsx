@@ -34,7 +34,12 @@ const HeroSection: React.FC = () => {
           <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
             <Button
                 variant="primary"
-                className="px-10 py-4 text-lg"
+                className="px-10 py-4 text-lg font-semibold
+                          bg-gray-900 text-white hover:bg-gray-800
+                          dark:bg-pomegranate-600 dark:text-white dark:hover:bg-pomegranate-500
+                          shadow-xl hover:shadow-2xl transform hover:scale-105 
+                          focus:ring-4 focus:ring-gray-800/50 dark:focus:ring-pomegranate-500/50
+                          transition-all duration-300"
                 onClick={() => {
                   const el = document.getElementById('services');
                   if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -44,7 +49,13 @@ const HeroSection: React.FC = () => {
             </Button>
             <Button
                 variant="secondary"
-                className="px-10 py-4 text-lg border-white text-white hover:bg-white hover:text-pomegranate-600 dark:border-pomegranate-400 dark:text-pomegranate-400 dark:hover:bg-pomegranate-400 dark:hover:text-gray-900"
+                className="px-10 py-4 text-lg font-semibold
+                          border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white
+                          dark:border-pomegranate-300 dark:text-pomegranate-300 dark:hover:bg-pomegranate-300 dark:hover:text-gray-900
+                          bg-white/10 backdrop-blur-sm
+                          shadow-xl hover:shadow-2xl transform hover:scale-105
+                          focus:ring-4 focus:ring-gray-800/50 dark:focus:ring-pomegranate-300/50
+                          transition-all duration-300"
                 onClick={() => {
                   const el = document.getElementById('contact');
                   if (el) el.scrollIntoView({ behavior: 'smooth' });

@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Container } from './Container';
-import { LinkedInIcon, TwitterIcon, GithubIcon } from '../ui/Icon';
+import { LinkedInIcon, FacebookIcon, InstagramIcon } from '../ui/Icon';
 
 const FooterLink: React.FC<{ href: string; children: React.ReactNode }> = ({ href, children }) => (
   <a href={href} className="text-gray-400 hover:text-pomegranate-400 transition-colors duration-300 text-sm">
@@ -13,9 +13,9 @@ export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
+    { Icon: FacebookIcon, href: '#', label: 'Facebook' },
+    { Icon: InstagramIcon, href: 'https://www.instagram.com/ku_soluciones/', label: 'Instagram' },
     { Icon: LinkedInIcon, href: '#', label: 'LinkedIn' },
-    { Icon: TwitterIcon, href: '#', label: 'Twitter' },
-    { Icon: GithubIcon, href: '#', label: 'GitHub' },
   ];
 
   return (
@@ -48,7 +48,8 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="text-lg font-semibold font-montserrat text-white mb-4">Contacto</h4>
             <p className="text-sm text-gray-400">Email: contacto@ku-soluciones.cl</p>
-            <p className="text-sm text-gray-400"></p>
+            <p className="text-sm text-gray-400">Teléfono: +56 9 8362 0169</p>
+            <p className="text-sm text-gray-400">Dirección: Palqui 2916, Ñuñoa</p>
             <div className="flex space-x-4 mt-4">
               {socialLinks.map(({ Icon, href, label }) => (
                 <a key={label} href={href} aria-label={label} className="text-gray-400 hover:text-pomegranate-400 transition-colors duration-300">

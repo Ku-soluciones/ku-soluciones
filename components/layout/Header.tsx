@@ -114,10 +114,11 @@ export const Header: React.FC = () => {
                 p-2.5 rounded-xl
                 text-slate-200 dark:text-white
                 hover:text-pomegranate-200 dark:hover:text-pomegranate-200
+                hover:bg-slate-800/60 dark:hover:bg-pomegranate-700/40
                 transition-all duration-300 ease-out
                 hover:scale-110 hover:rotate-12
                 active:scale-95
-                bg-transparent hover:bg-transparent
+                focus:outline-none focus:ring-2 focus:ring-pomegranate-500/50
               "
                             disableVisualClickEffect
                         />
