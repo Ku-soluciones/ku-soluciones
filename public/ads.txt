@@ -1,0 +1,6 @@
+# KU Soluciones - Archivo ads.txt
+# Este archivo controla qué vendedores pueden vender inventario publicitario en nuestro sitio
+# Por ahora no tenemos publicidad, pero mantenemos el archivo para futuras implementaciones
+
+# Ejemplo de formato:
+# google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0 
