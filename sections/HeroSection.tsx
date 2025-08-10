@@ -16,7 +16,7 @@ const HeroSection: React.FC = () => {
       <Container className="relative z-10">
         {/* Badge de identificación */}
         <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
-          <span className="text-sm font-medium">🚀 Desarrolladores Tecnológicos en Chile</span>
+          <span className="text-sm font-medium">Desarrolladores Tecnológicos en Chile</span>
         </div>
 
         {/* Título principal optimizado para SEO */}
@@ -40,22 +40,22 @@ const HeroSection: React.FC = () => {
         <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
           <Button
               variant="primary"
-              className="px-10 py-4 text-lg font-semibold"
+              className="px-10 py-4 text-lg font-bold bg-white text-gray-700 hover:bg-gray-100 hover:text-white border-2 border-white shadow-xl hover:shadow-2xl"
               onClick={() => {
                 const el = document.getElementById('final-cta');
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
               }}
           >
-            📅 Agenda una reunión
+            Agenda una reunión
           </Button>
           <Button
               variant="secondary"
-              className="px-10 py-4 text-lg border-white text-white hover:bg-white hover:text-pomegranate-600 dark:border-pomegranate-400 dark:text-pomegranate-400 dark:hover:bg-pomegranate-400 dark:hover:text-gray-900"
+              className="px-10 py-4 text-lg font-bold bg-white/30 text-gray-800 hover:bg-pomegranate-600 hover:text-white border-2 border-gray-400 hover:border-pomegranate-600 shadow-xl hover:shadow-2xl backdrop-blur-sm"
               onClick={() => {
                 window.open('https://wa.me/56912345678', '_blank');
               }}
           >
-            💬 Escríbenos por WhatsApp
+            Escríbenos por WhatsApp
           </Button>
         </div>
 
@@ -63,10 +63,10 @@ const HeroSection: React.FC = () => {
         <div className="mt-12 pt-8 border-t border-white/20">
           <p className="text-sm opacity-80 mb-4">Empresas chilenas que confían en nuestros desarrolladores tecnológicos:</p>
           <div className="flex justify-center items-center space-x-8 opacity-60">
-            <span className="text-sm">🏢 Logística Chile</span>
-            <span className="text-sm">🛍️ Retail Nacional</span>
-            <span className="text-sm">🏭 Manufactura</span>
-            <span className="text-sm">💼 Servicios</span>
+            <span className="text-sm">Logística Chile</span>
+            <span className="text-sm">Retail Nacional</span>
+            <span className="text-sm">Manufactura</span>
+            <span className="text-sm">Servicios</span>
           </div>
         </div>
       </Container>

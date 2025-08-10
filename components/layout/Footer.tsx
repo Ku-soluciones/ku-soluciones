@@ -62,13 +62,20 @@ const Footer: React.FC = () => {
                         </ul>
                     </div>
 
-                    {/* Legal */}
+                    {/* Contacto */}
                     <div>
-                        <h3 className="text-lg font-semibold mb-4">Legal</h3>
+                        <h3 className="text-lg font-semibold mb-4">Contacto</h3>
                         <ul className="space-y-2">
-                            <li><FooterLink href="#">Política de Privacidad</FooterLink></li>
-                            <li><FooterLink href="#">Términos de Servicio</FooterLink></li>
-                            <li><FooterLink href="#">Política de Cookies</FooterLink></li>
+                            <li>
+                                <a href="tel:+56983620169" className="text-gray-400 hover:text-pomegranate-400 transition-colors duration-200">
+                                    📞 +56 9 8362 0169
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:contacto@ku-soluciones.cl" className="text-gray-400 hover:text-pomegranate-400 transition-colors duration-200">
+                                    📧 contacto@ku-soluciones.cl
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>

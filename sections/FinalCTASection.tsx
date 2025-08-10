@@ -113,9 +113,9 @@ const FinalCTASection: React.FC = () => {
               <Button
                 type="submit"
                 variant="primary"
-                className="px-8 py-4 text-lg font-semibold bg-white text-pomegranate-600 hover:bg-gray-100 hover:text-pomegranate-700 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                className="px-8 py-4 text-lg font-semibold bg-white dark:bg-gray-800 text-gray-700 dark:text-white hover:bg-pomegranate-600 hover:text-white dark:hover:bg-gray-700 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl border-2 border-gray-300 dark:border-gray-600"
               >
-                📞 Enviar y agendar reunión
+                Enviar mensaje
               </Button>
             </div>
           </form>
@@ -125,12 +125,10 @@ const FinalCTASection: React.FC = () => {
             <p className="text-white/80 mb-4">¿Prefieres contactar directamente a nuestros desarrolladores tecnológicos en Chile?</p>
             <div className="flex justify-center space-x-4">
               <a
-                href="https://wa.me/56912345678"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 bg-green-500 hover:bg-green-600 text-white rounded-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                href="tel:+56983620169"
+                className="inline-flex items-center px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
               >
-                💬 WhatsApp
+                📞 +56 9 8362 0169
               </a>
               <a
                 href="mailto:contacto@ku-soluciones.cl"
