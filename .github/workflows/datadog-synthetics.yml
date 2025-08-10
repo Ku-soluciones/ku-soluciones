@@ -1,4 +1,6 @@
 name: Run Datadog Synthetic tests
+permissions:
+  contents: read
 
 on:
   push:
