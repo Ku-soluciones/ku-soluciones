@@ -1,46 +1,73 @@
-
 import React from 'react';
 import { Container } from '../components/layout/Container';
 import { Button } from '../components/ui/Button';
-import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
-
+import AnimatedShapes from '../components/ui/AnimatedShapes';
 
 const HeroSection: React.FC = () => {
-  const [ref, isVisible] = useIntersectionObserver<HTMLDivElement>({ threshold: 0.1, triggerOnce: true });
-
-  // Placeholder for animated shapes
-  const AnimatedShapes: React.FC = () => (
-    <div className="absolute inset-0 overflow-hidden -z-10">
-      <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-pomegranate-500/30 dark:bg-pomegranate-400/20 rounded-full animate-pulse delay-100"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-pomegranate-600/20 dark:bg-pomegranate-500/10 rounded-lg animate-pulse delay-300 transform rotate-45"></div>
-      <div className="absolute top-1/2 left-1/3 w-24 h-24 border-4 border-pomegranate-500/50 dark:border-pomegranate-400/40 rounded-full animate-ping opacity-50"></div>
-    </div>
-  );
-  
   return (
-    <section 
-      id="hero" 
-      ref={ref}
-      className={`relative min-h-screen flex items-center justify-center text-center text-white 
-                  bg-gradient-to-br from-pomegranate-500 to-pomegranate-600 
-                  dark:from-gray-800 dark:to-black
-                  py-20 md:py-32 overflow-hidden ${isVisible ? 'section-visible' : 'section-hidden'}`}
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center justify-center text-center text-white 
+              bg-gradient-to-br from-pomegranate-600 via-pomegranate-700 to-pomegranate-800
+              dark:from-gray-900 dark:via-black dark:to-gray-950
+              py-20 md:py-32 overflow-hidden"
     >
       <AnimatedShapes />
       <Container className="relative z-10">
-        <h1 className="font-poppins text-5xl md:text-7xl font-bold mb-6 drop-shadow-md">
-          Innovación Tecnológica a tu Alcance
+        {/* Badge de identificación */}
+        <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
+          <span className="text-sm font-medium">🚀 Desarrolladores Tecnológicos en Chile</span>
+        </div>
+
+        {/* Título principal optimizado para SEO */}
+        <h1 className="font-poppins text-4xl md:text-6xl lg:text-7xl font-bold mb-6 drop-shadow-md">
+          Software a medida
+          <span className="block text-pomegranate-200">para pymes en Chile</span>
         </h1>
-        <p className="font-roboto text-xl md:text-2xl font-medium mb-10 max-w-3xl mx-auto drop-shadow-sm">
-          Transformamos ideas en soluciones digitales de vanguardia que impulsan el crecimiento de tu negocio.
+
+        {/* Subtítulo optimizado con keywords */}
+        <p className="font-roboto text-lg md:text-xl lg:text-2xl font-medium mb-8 max-w-4xl mx-auto drop-shadow-sm">
+          Especialistas en automatización de procesos en Chile y soluciones digitales personalizadas
+          para empresas que quieren crecer con tecnología.
         </p>
+
+        {/* Pregunta directa */}
+        <p className="font-roboto text-lg md:text-xl font-medium mb-10 max-w-3xl mx-auto drop-shadow-sm text-pomegranate-200">
+          ¿Necesitas una solución tecnológica a medida? Hablemos.
+        </p>
+
+        {/* Call-to-action específico */}
         <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
-          <Button variant="primary" className="px-10 py-4 text-lg" onClick={() => { const el = document.getElementById('services'); if(el) el.scrollIntoView({behavior: 'smooth'})}}>
-            Nuestros Servicios
+          <Button
+              variant="primary"
+              className="px-10 py-4 text-lg font-semibold"
+              onClick={() => {
+                const el = document.getElementById('final-cta');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
+          >
+            📅 Agenda una reunión
           </Button>
-          <Button variant="secondary" className="px-10 py-4 text-lg border-white text-white hover:bg-white hover:text-pomegranate-600 dark:border-pomegranate-400 dark:text-pomegranate-400 dark:hover:bg-pomegranate-400 dark:hover:text-gray-900" onClick={() => { const el = document.getElementById('contact'); if(el) el.scrollIntoView({behavior: 'smooth'})}}>
-            Contáctanos
+          <Button
+              variant="secondary"
+              className="px-10 py-4 text-lg border-white text-white hover:bg-white hover:text-pomegranate-600 dark:border-pomegranate-400 dark:text-pomegranate-400 dark:hover:bg-pomegranate-400 dark:hover:text-gray-900"
+              onClick={() => {
+                window.open('https://wa.me/56912345678', '_blank');
+              }}
+          >
+            💬 Escríbenos por WhatsApp
           </Button>
+        </div>
+
+        {/* Trust indicators optimizados */}
+        <div className="mt-12 pt-8 border-t border-white/20">
+          <p className="text-sm opacity-80 mb-4">Empresas chilenas que confían en nuestros desarrolladores tecnológicos:</p>
+          <div className="flex justify-center items-center space-x-8 opacity-60">
+            <span className="text-sm">🏢 Logística Chile</span>
+            <span className="text-sm">🛍️ Retail Nacional</span>
+            <span className="text-sm">🏭 Manufactura</span>
+            <span className="text-sm">💼 Servicios</span>
+          </div>
         </div>
       </Container>
     </section>
