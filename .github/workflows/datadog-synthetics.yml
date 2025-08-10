@@ -4,9 +4,9 @@ permissions:
 
 on:
   push:
-    branches: [ "main" ]   # <-- ajusta si usas master
+    branches: [ "master" ]   # <-- ajusta si usas master
   pull_request:
-    branches: [ "main" ]   # O evita PRs desde forks si necesitas secrets
+    branches: [ "master" ]   # O evita PRs desde forks si necesitas secrets
 
 jobs:
   run-synthetics:
