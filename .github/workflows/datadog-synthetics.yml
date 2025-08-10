@@ -11,6 +11,7 @@ on:
 jobs:
   run-synthetics:
     runs-on: ubuntu-latest
+    environment: Production
     # environment: production   # <-- si tus secrets están en un Environment
     steps:
       - uses: actions/checkout@v4
