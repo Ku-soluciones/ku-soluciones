@@ -1,19 +1,46 @@
 User-agent: *
 Allow: /
 
-# Sitemap
+# Sitemap principal
 Sitemap: https://kusoluciones.com/sitemap.xml
 
-# Crawl-delay
+# Crawl-delay para Google
 Crawl-delay: 1
 
-# Disallow admin areas (if any)
-Disallow: /admin/
-Disallow: /private/
-Disallow: /api/
-
-# Allow important files
+# Permitir archivos importantes
 Allow: /css/
 Allow: /js/
 Allow: /images/
-Allow: /fonts/ 
+Allow: /fonts/
+Allow: /public/
+
+# Bloquear archivos sensibles
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+Disallow: /.env
+Disallow: /config/
+Disallow: /node_modules/
+Disallow: /vendor/
+
+# Bloquear archivos de desarrollo
+Disallow: /*.log
+Disallow: /*.tmp
+Disallow: /*.bak
+Disallow: /*.swp
+Disallow: /*.swo
+
+# Permitir Googlebot específicamente
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Permitir Googlebot-Image para imágenes
+User-agent: Googlebot-Image
+Allow: /
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.png
+Allow: /*.gif
+Allow: /*.webp
+Allow: /*.svg 
