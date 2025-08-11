@@ -3,7 +3,7 @@ import React, { Suspense } from 'react';
 import { Header } from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import SEO from './components/SEO';
-import FloatingWhatsApp from './components/ui/FloatingWhatsApp';
+import { Chatbot } from './components/ui/Chatbot';
 import { useTheme } from './hooks/useTheme';
 import { useActiveSection } from './hooks/useActiveSection';
 
@@ -60,7 +60,7 @@ const App: React.FC = () => {
           </Suspense>
         </main>
         <Footer />
-        <FloatingWhatsApp />
+        <Chatbot />
       </div>
     </>
   );
