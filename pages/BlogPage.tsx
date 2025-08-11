@@ -9,7 +9,7 @@ const BlogPage: React.FC = () => {
         title="Blog - KU Soluciones"
         description="Mantente actualizado con las últimas tendencias en desarrollo web, tecnología y mejores prácticas. Artículos técnicos y casos de estudio."
         keywords="blog tecnología, desarrollo web, tendencias tecnología, artículos técnicos, casos estudio"
-        url="https://kusoluciones.com/blog"
+        url="https://www.ku-soluciones.cl/blog"
       />
       <div className="pt-20">
         <BlogSection />

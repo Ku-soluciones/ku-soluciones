@@ -20,8 +20,8 @@ const SEO: React.FC<SEOProps> = ({
   title = 'KU Soluciones - Desarrollo Web y Tecnología Moderna',
   description = 'KU Soluciones es una empresa líder en desarrollo web, aplicaciones móviles y soluciones tecnológicas innovadoras. Ofrecemos servicios de alta calidad con tecnología de vanguardia.',
   keywords = 'desarrollo web, aplicaciones móviles, tecnología, software, React, TypeScript, soluciones digitales, programación, diseño web',
-  image = 'https://kusoluciones.com/og-image.jpg',
-  url = 'https://kusoluciones.com',
+  image = 'https://www.ku-soluciones.cl/og-image.jpg',
+  url = 'https://www.ku-soluciones.cl',
   type = 'website',
   author = 'KU Soluciones',
   publishedTime,
@@ -101,7 +101,7 @@ const SEO: React.FC<SEOProps> = ({
         "isPartOf": {
           "@type": "WebSite",
           "name": "KU Soluciones",
-          "url": "https://kusoluciones.com"
+          "url": "https://www.ku-soluciones.cl"
         },
         "about": {
           "@type": "Organization",

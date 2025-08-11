@@ -59,7 +59,7 @@
 
 ### 1. Google Search Console
 1. Ve a [Google Search Console](https://search.google.com/search-console)
-2. Agrega tu propiedad (kusoluciones.com)
+2. Agrega tu propiedad (ku-soluciones.cl)
 3. Verifica la propiedad usando el archivo `google-verification.html`
 4. Envía el sitemap.xml
 
@@ -118,4 +118,4 @@ Crea las siguientes imágenes:
 - Monitorear enlaces rotos
 
 ## Contacto
-Para consultas sobre SEO: seo@kusoluciones.com 
+Para consultas sobre SEO: seo@ku-soluciones.cl 

@@ -21,19 +21,19 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, currentPage }) => {
           "@type": "ListItem",
           "position": 1,
           "name": "Inicio",
-          "item": "https://kusoluciones.com/"
+          "item": "https://www.ku-soluciones.cl/"
         },
         ...items.map((item, index) => ({
           "@type": "ListItem",
           "position": index + 2,
           "name": item.name,
-          "item": `https://kusoluciones.com${item.url}`
+          "item": `https://www.ku-soluciones.cl${item.url}`
         })),
         {
           "@type": "ListItem",
           "position": items.length + 2,
           "name": currentPage,
-          "item": `https://kusoluciones.com${items[items.length - 1]?.url || '/'}`
+          "item": `https://www.ku-soluciones.cl${items[items.length - 1]?.url || '/'}`
         }
       ]
     };
