@@ -9,7 +9,7 @@ const ContactPage: React.FC = () => {
         title="Contacto - KU Soluciones"
         description="Contáctanos para discutir tu proyecto. Estamos listos para ayudarte a transformar tus ideas en soluciones digitales innovadoras."
         keywords="contacto desarrollo web, consulta proyectos, cotización servicios, soporte técnico"
-        url="https://kusoluciones.com/contacto"
+        url="https://www.ku-soluciones.cl/contacto"
       />
       <div className="pt-20">
         <ContactSection />

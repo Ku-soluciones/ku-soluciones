@@ -10,7 +10,7 @@ const PortfolioPage: React.FC = () => {
         title="Portafolio de Proyectos - KU Soluciones"
         description="Explora nuestros proyectos de desarrollo web, aplicaciones móviles y soluciones tecnológicas. Casos de éxito que demuestran nuestra experiencia."
         keywords="portafolio proyectos, casos éxito, desarrollo web, aplicaciones móviles, proyectos tecnología"
-        url="https://kusoluciones.com/portafolio"
+        url="https://www.ku-soluciones.cl/portafolio"
       />
       <div className="pt-20">
         <PortfolioSection />

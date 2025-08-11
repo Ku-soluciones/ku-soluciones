@@ -1,8 +1,7 @@
 User-agent: *
 Allow: /
 
-# Sitemap principal
-Sitemap: https://kusoluciones.com/sitemap.xml
+Sitemap: https://www.ku-soluciones.cl/sitemap.xml
 
 # Crawl-delay para Google
 Crawl-delay: 1

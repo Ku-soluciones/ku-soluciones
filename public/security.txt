@@ -1,6 +1,6 @@
-Contact: mailto:security@kusoluciones.com
+Contact: mailto:security@ku-soluciones.cl
 Expires: 2025-12-31T23:59:59.000Z
 Preferred-Languages: es, en
-Canonical: https://kusoluciones.com/.well-known/security.txt
-Policy: https://kusoluciones.com/security-policy
-Hiring: https://kusoluciones.com/careers 
+Canonical: https://www.ku-soluciones.cl/.well-known/security.txt
+Policy: https://www.ku-soluciones.cl/security-policy
+Hiring: https://www.ku-soluciones.cl/careers 
