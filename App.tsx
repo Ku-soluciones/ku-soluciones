@@ -41,7 +41,7 @@ const App: React.FC = () => {
         title="KU Soluciones - Software a Medida para Pymes en Chile"
         description="Especialistas en automatización de procesos en Chile y soluciones digitales personalizadas. Desarrollamos software a medida para pymes que quieren crecer con tecnología."
         keywords="software a medida para pymes, automatización de procesos en Chile, desarrolladores tecnológicos en Chile, soluciones digitales personalizadas"
-        url="https://kusoluciones.com"
+        url="https://www.ku-soluciones.cl"
         showOrganizationData={true}
       />
       <div className="flex flex-col min-h-screen">

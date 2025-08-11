@@ -83,7 +83,7 @@ const ServicesSection: React.FC = () => {
         description="Ofrecemos automatización de procesos en Chile, software a medida para pymes, aplicaciones móviles y soluciones digitales personalizadas."
         provider={{
           name: "KU Soluciones",
-          url: "https://kusoluciones.com",
+          url: "https://www.ku-soluciones.cl",
           address: {
             addressCountry: "CL",
             addressLocality: "Santiago"

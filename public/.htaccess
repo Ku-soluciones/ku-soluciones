@@ -43,7 +43,7 @@
 # Redirección de www a no-www (o viceversa según preferencia)
 RewriteEngine On
 RewriteCond %{HTTP_HOST} ^www\.kusoluciones\.com [NC]
-RewriteRule ^(.*)$ https://kusoluciones.com/$1 [L,R=301]
+RewriteRule ^(.*)$ https://www.ku-soluciones.cl/$1 [L,R=301]
 
 # Forzar HTTPS
 RewriteCond %{HTTPS} off

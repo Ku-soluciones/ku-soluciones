@@ -10,7 +10,7 @@ const WebDevelopmentPage: React.FC = () => {
         title="Desarrollo Web - KU Soluciones"
         description="Desarrollo web profesional con tecnologías modernas. Creamos sitios web responsivos, rápidos y optimizados para SEO. React, TypeScript y más."
         keywords="desarrollo web, sitios web, React, TypeScript, diseño web, SEO, responsivo"
-        url="https://kusoluciones.com/servicios/desarrollo-web"
+        url="https://www.ku-soluciones.cl/servicios/desarrollo-web"
       />
       <div className="pt-20">
         <div className="container mx-auto px-4">

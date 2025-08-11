@@ -6,7 +6,7 @@ const OrganizationStructuredData: React.FC = () => {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "KU Soluciones",
-      "url": "https://kusoluciones.com",
+      "url": "https://www.ku-soluciones.cl",
       "logo": "https://res.cloudinary.com/dddfx1xwt/image/upload/v1750340412/logoku_wg4bgn.webp",
       "description": "Especialistas en automatización de procesos en Chile y soluciones digitales personalizadas para pymes chilenas.",
       "address": {
