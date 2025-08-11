@@ -1,7 +1,3 @@
-google-site-verification: google1234567890abcdef.html
 
-PASOS PARA VERIFICAR EN GOOGLE SEARCH CONSOLE:
-1. Ve a: https://search.google.com/search-console
-2. Añade tu propiedad: https://www.ku-soluciones.cl
-3. Selecciona "Archivo HTML"
-4. Sube este archivo a tu servidor
+google-site-verification: 5x7fz7VPc69U9L1q3iw-xzjFHW6nPzPXyAZ5XPa1pd4
+

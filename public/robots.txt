@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 
+
 Sitemap: https://www.ku-soluciones.cl/sitemap.xml
 
 # Crawl-delay para Google
