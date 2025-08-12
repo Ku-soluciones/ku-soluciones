@@ -161,7 +161,7 @@ export const Header: React.FC = () => {
                                 </Button>
                             </a>
                             <a 
-                                href="https://wa.me/56912345678" 
+                                href="https://wa.me/56983620169" 
                                 target="_blank" 
                                 rel="noopener noreferrer"
                             >

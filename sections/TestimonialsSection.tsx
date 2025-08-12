@@ -3,6 +3,8 @@ import React from 'react';
 import SectionWrapper from './SectionWrapper';
 import { Card } from '../components/ui/Card';
 import Breadcrumbs from '../components/ui/Breadcrumbs';
+import FeatureIcon from '../components/ui/FeatureIcon';
+import SocialIcon from '../components/ui/SocialIcon';
 
 const TestimonialsSection: React.FC = () => {
   const testimonials = [
@@ -62,7 +64,12 @@ const TestimonialsSection: React.FC = () => {
             {/* Rating */}
             <div className="flex mb-4">
               {[...Array(testimonial.rating)].map((_, index) => (
-                <span key={index} className="text-yellow-400">⭐</span>
+                <span key={index} className="text-yellow-400">
+                  {/* Lucide "star" icon - Professional rating star */}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26 12,2"/>
+                  </svg>
+                </span>
               ))}
             </div>
             
@@ -124,13 +131,15 @@ const TestimonialsSection: React.FC = () => {
         </h3>
         <div className="grid md:grid-cols-4 gap-4">
           {[
-            { name: 'Logística', icon: '🚚', clients: 15 },
-            { name: 'Retail', icon: '🛍️', clients: 12 },
-            { name: 'Manufactura', icon: '🏭', clients: 8 },
-            { name: 'Servicios', icon: '💼', clients: 15 }
+            { name: 'Logística', iconType: 'logistics' as const, clients: 15 },
+            { name: 'Retail', iconType: 'retail' as const, clients: 12 },
+            { name: 'Manufactura', iconType: 'manufacturing' as const, clients: 8 },
+            { name: 'Servicios', iconType: 'services' as const, clients: 15 }
           ].map((industry, index) => (
             <div key={index} className="text-center p-4 bg-white dark:bg-gray-700 rounded-lg hover:shadow-lg transition-shadow duration-300">
-              <div className="text-3xl mb-2">{industry.icon}</div>
+              <div className="flex justify-center mb-2">
+                <FeatureIcon type={industry.iconType} size="xl" className="text-pomegranate-600 dark:text-pomegranate-400" />
+              </div>
               <h4 className="font-semibold text-gray-800 dark:text-white mb-1">
                 {industry.name}
               </h4>
@@ -155,9 +164,10 @@ const TestimonialsSection: React.FC = () => {
             const el = document.getElementById('final-cta');
             if (el) el.scrollIntoView({ behavior: 'smooth' });
           }}
-          className="bg-pomegranate-600 hover:bg-pomegranate-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200"
+          className="bg-pomegranate-600 hover:bg-pomegranate-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 flex items-center gap-2 mx-auto justify-center"
         >
-          📞 Agendar consulta gratuita
+          <SocialIcon type="phone" size="sm" variant="minimal" className="text-white" />
+          Agendar consulta gratuita
         </button>
       </div>
     </SectionWrapper>

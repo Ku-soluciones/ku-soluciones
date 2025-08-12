@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import SectionWrapper from './SectionWrapper';
 import { Button } from '../components/ui/Button';
-import { LinkedInIcon, TwitterIcon, GithubIcon } from '../components/ui/Icon';
+import SocialIcon from '../components/ui/SocialIcon';
 
 const ContactSection: React.FC = () => {
   const [formData, setFormData] = useState({ 
@@ -27,29 +27,32 @@ const ContactSection: React.FC = () => {
   };
 
   const socialLinks = [
-    { Icon: LinkedInIcon, href: '#', label: 'LinkedIn' },
-    { Icon: TwitterIcon, href: '#', label: 'Twitter' },
-    { Icon: GithubIcon, href: '#', label: 'GitHub' },
+    { type: 'linkedin' as const, href: '#', label: 'LinkedIn' },
+    { type: 'twitter' as const, href: '#', label: 'Twitter' },
+    { type: 'github' as const, href: '#', label: 'GitHub' },
   ];
 
   const contactMethods = [
     {
-      icon: '📞',
+      type: 'phone' as const,
       title: 'Llámanos',
       description: 'Horario de atención: Lunes a Viernes 9:00 - 18:00',
-      action: '+56 9 1234 5678'
+      action: '+56 9 8362 0169',
+      href: 'tel:+56983620169'
     },
     {
-      icon: '📧',
+      type: 'email' as const,
       title: 'Escríbenos',
       description: 'Respuesta en menos de 24 horas',
-      action: 'contacto@ku-soluciones.cl'
+      action: 'contacto@ku-soluciones.cl',
+      href: 'mailto:contacto@ku-soluciones.cl'
     },
     {
-      icon: '💬',
+      type: 'whatsapp' as const,
       title: 'WhatsApp',
       description: 'Atención inmediata para consultas urgentes',
-      action: '+56 9 1234 5678'
+      action: '+56 9 8362 0169',
+      href: 'https://wa.me/56983620169'
     }
   ];
 
@@ -143,9 +146,14 @@ const ContactSection: React.FC = () => {
                 className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-pomegranate-500 focus:border-pomegranate-500 sm:text-sm bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
               ></textarea>
             </div>
-            <div>
-              <Button type="submit" variant="primary" className="w-full">
-                📞 Solicitar Consulta Gratuita
+            <div className="flex justify-center">
+              <Button 
+                type="submit" 
+                variant="primary" 
+                className="px-10 py-4 text-lg font-semibold border-2 border-pomegranate-600 hover:border-pomegranate-700 transition-all duration-300 flex items-center gap-2"
+              >
+                <SocialIcon type="phone" size="sm" variant="minimal" className="text-white" />
+                Solicitar Consulta Gratuita
               </Button>
             </div>
           </form>
@@ -161,16 +169,39 @@ const ContactSection: React.FC = () => {
               {contactMethods.map((method, index) => (
                 <div key={index} className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
                   <div className="flex items-start space-x-4">
-                    <div className="text-2xl">{method.icon}</div>
+                    <SocialIcon 
+                      type={method.type}
+                      size="lg"
+                      variant="filled"
+                    />
                     <div className="flex-1">
                       <h4 className="font-semibold text-gray-800 dark:text-white mb-1">{method.title}</h4>
                       <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">{method.description}</p>
-                      <a 
-                        href={method.title === 'WhatsApp' ? `https://wa.me/56912345678` : `mailto:${method.action}`}
-                        className="text-pomegranate-600 dark:text-pomegranate-400 hover:underline font-medium"
-                      >
-                        {method.action}
-                      </a>
+                      {method.type === 'whatsapp' ? (
+                        <button
+                          onClick={() => window.open(method.href, '_blank')}
+                          className="px-6 py-3 text-base font-semibold bg-green-600 text-white border-2 border-green-600 hover:bg-green-700 hover:border-green-700 transition-all duration-300 rounded-lg flex items-center gap-2"
+                        >
+                          <SocialIcon type="whatsapp" size="sm" variant="minimal" className="text-white" />
+                          Escribir por WhatsApp
+                        </button>
+                      ) : method.type === 'email' ? (
+                        <button
+                          onClick={() => window.open(method.href, '_blank')}
+                          className="px-6 py-3 text-base font-semibold bg-blue-600 text-white border-2 border-blue-600 hover:bg-blue-700 hover:border-blue-700 transition-all duration-300 rounded-lg flex items-center gap-2"
+                        >
+                          <SocialIcon type="email" size="sm" variant="minimal" className="text-white" />
+                          Enviar Email
+                        </button>
+                      ) : (
+                        <a 
+                          href={method.href}
+                          className="px-6 py-3 text-base font-semibold bg-pomegranate-600 text-white border-2 border-pomegranate-600 hover:bg-pomegranate-700 hover:border-pomegranate-700 transition-all duration-300 rounded-lg flex items-center gap-2 inline-flex"
+                        >
+                          <SocialIcon type="phone" size="sm" variant="minimal" className="text-white" />
+                          Llamar Ahora
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -205,14 +236,14 @@ const ContactSection: React.FC = () => {
           <div>
             <h4 className="font-semibold text-gray-800 dark:text-white mb-4">Síguenos</h4>
             <div className="flex space-x-4">
-              {socialLinks.map(({ Icon, href, label }) => (
+              {socialLinks.map(({ type, href, label }) => (
                 <a
                   key={label}
                   href={href}
                   className="text-gray-400 hover:text-pomegranate-400 transition-colors duration-200"
                   aria-label={label}
                 >
-                  <Icon className="w-6 h-6" />
+                  <SocialIcon type={type} size="lg" variant="outline" className="text-gray-500 hover:text-pomegranate-500" />
                 </a>
               ))}
             </div>
