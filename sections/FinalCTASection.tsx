@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Container } from '../components/layout/Container';
 import { Button } from '../components/ui/Button';
+import SocialIcon from '../components/ui/SocialIcon';
 
 const FinalCTASection: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -113,9 +114,10 @@ const FinalCTASection: React.FC = () => {
               <Button
                 type="submit"
                 variant="primary"
-                className="px-8 py-4 text-lg font-semibold bg-white text-pomegranate-600 hover:bg-gray-100 hover:text-pomegranate-700 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                className="px-10 py-4 text-lg font-semibold border-2 border-white dark:border-gray-300 transition-all duration-300 flex items-center gap-2 mx-auto justify-center"
               >
-                📞 Enviar y agendar reunión
+                <SocialIcon type="phone" size="sm" variant="minimal" className="text-white" />
+                Enviar y agendar reunión
               </Button>
             </div>
           </form>
@@ -123,21 +125,27 @@ const FinalCTASection: React.FC = () => {
           {/* Información adicional optimizada */}
           <div className="mt-12 text-center">
             <p className="text-white/80 mb-4">¿Prefieres contactar directamente a nuestros desarrolladores tecnológicos en Chile?</p>
-            <div className="flex justify-center space-x-4">
-              <a
-                href="https://wa.me/56912345678"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 bg-green-500 hover:bg-green-600 text-white rounded-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+            <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+              <Button
+                variant="primary"
+                className="px-10 py-4 text-lg font-semibold border-2 border-white dark:border-gray-300"
+                onClick={() => {
+                  const el = document.getElementById('final-cta');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }}
               >
-                💬 WhatsApp
-              </a>
-              <a
-                href="mailto:contacto@ku-soluciones.cl"
-                className="inline-flex items-center px-6 py-3 bg-white/10 hover:bg-white/20 text-white rounded-lg font-semibold transition-all duration-300 hover:scale-105 border border-white/20"
+                Agenda una reunión
+              </Button>
+              <Button
+                variant="secondary"
+                className="px-10 py-4 text-lg font-semibold bg-pomegranate-200 text-pomegranate-800 border-2 border-white hover:text-white transition-all duration-300 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-300 dark:hover:text-white flex items-center gap-2"
+                onClick={() => {
+                  window.open('https://wa.me/56983620169', '_blank');
+                }}
               >
-                📧 Email
-              </a>
+                <SocialIcon type="whatsapp" size="sm" variant="minimal" className="text-current" />
+                Escríbenos por WhatsApp
+              </Button>
             </div>
           </div>
         </div>

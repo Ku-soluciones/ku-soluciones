@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Container } from './Container';
-import { LinkedInIcon, TwitterIcon, GithubIcon } from '../ui/Icon';
+import SocialIcon from '../ui/SocialIcon';
 
 const FooterLink: React.FC<{ href: string; children: React.ReactNode }> = ({ href, children }) => (
     <a
@@ -14,9 +14,9 @@ const FooterLink: React.FC<{ href: string; children: React.ReactNode }> = ({ hre
 
 const Footer: React.FC = () => {
     const socialLinks = [
-        { Icon: LinkedInIcon, href: '#', label: 'LinkedIn' },
-        { Icon: TwitterIcon, href: '#', label: 'Twitter' },
-        { Icon: GithubIcon, href: '#', label: 'GitHub' },
+        { type: 'instagram' as const, href: 'https://instagram.com/ku-soluciones' },
+        { type: 'facebook' as const, href: 'https://facebook.com/kusoluciones' },
+        { type: 'linkedin' as const, href: 'https://linkedin.com/company/ku-soluciones' }
     ];
 
     return (
@@ -37,16 +37,16 @@ const Footer: React.FC = () => {
                             Transformamos ideas en realidad digital. Especialistas en desarrollo web, 
                             aplicaciones móviles y soluciones tecnológicas innovadoras.
                         </p>
-                        <div className="flex space-x-4">
-                            {socialLinks.map(({ Icon, href, label }) => (
-                                <a
-                                    key={label}
-                                    href={href}
-                                    className="text-gray-400 hover:text-pomegranate-400 transition-colors duration-200"
-                                    aria-label={label}
-                                >
-                                    <Icon className="w-5 h-5" />
-                                </a>
+                        <div className="flex items-center space-x-4">
+                            {socialLinks.map((link, index) => (
+                                <SocialIcon
+                                    key={`${link.type}-${index}`}
+                                    type={link.type}
+                                    href={link.href}
+                                    size="md"
+                                    variant="minimal"
+                                    className="text-gray-400 hover:text-gray-300"
+                                />
                             ))}
                         </div>
                     </div>

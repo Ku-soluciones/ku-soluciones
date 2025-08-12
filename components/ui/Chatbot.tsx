@@ -58,12 +58,27 @@ export const Chatbot: React.FC<ChatbotProps> = ({ className = '' }) => {
       timestamp: new Date()
     };
 
-    // Detectar si el usuario está proporcionando su nombre
-    const nameMatch = inputMessage.match(/(?:me llamo|soy|mi nombre es|llámame)\s+([A-Za-zÁáÉéÍíÓóÚúÑñ]+)/i);
-    if (nameMatch && !userName) {
-      const detectedName = nameMatch[1];
-      setUserName(detectedName);
-      console.log('Nombre detectado:', detectedName);
+    // Detectar si el usuario está proporcionando su nombre - más flexible
+    if (!userName) {
+      const namePatterns = [
+        /(?:me llamo|soy|mi nombre es|llámame)\s+([A-Za-zÁáÉéÍíÓóÚúÑñ]+)/i,
+        /^([A-Za-zÁáÉéÍíÓóÚúÑñ]{2,15})$/i, // Solo el nombre como respuesta
+        /hola,?\s+soy\s+([A-Za-zÁáÉéÍíÓóÚúÑñ]+)/i // "Hola soy Juan"
+      ];
+      
+      for (const pattern of namePatterns) {
+        const nameMatch = inputMessage.match(pattern);
+        if (nameMatch) {
+          const detectedName = nameMatch[1];
+          // Verificar que no sea una palabra común que no sea un nombre
+          const commonWords = ['hola', 'gracias', 'bien', 'mal', 'sí', 'no', 'bueno', 'malo', 'precio', 'costo'];
+          if (!commonWords.includes(detectedName.toLowerCase()) && detectedName.length >= 2) {
+            setUserName(detectedName);
+            console.log('Nombre detectado:', detectedName);
+            break;
+          }
+        }
+      }
     }
 
     setMessages(prev => [...prev, userMessage]);
@@ -76,7 +91,8 @@ export const Chatbot: React.FC<ChatbotProps> = ({ className = '' }) => {
       
       const response = await deepseekService.sendMessage(
         userMessage.content,
-        messages.slice(-5) // Enviar solo los últimos 5 mensajes para contexto
+        messages.slice(-5), // Enviar solo los últimos 5 mensajes para contexto
+        userName // Pasar el nombre del usuario
       );
 
       console.log('Respuesta recibida:', response);

@@ -17,7 +17,7 @@ export class DeepSeekService {
     this.apiKey = apiKey;
   }
 
-  async sendMessage(message: string, conversationHistory: ChatMessage[] = []): Promise<DeepSeekResponse> {
+  async sendMessage(message: string, conversationHistory: ChatMessage[] = [], userName?: string | null): Promise<DeepSeekResponse> {
     try {
       const messages = [
         {
@@ -27,7 +27,7 @@ export class DeepSeekService {
 SERVICIOS: Sitios web, tiendas online, automatización, sistemas de gestión, integración de plataformas.
 
 RESPUESTAS BREVES Y PERSONALES:
-- Usa el nombre del usuario si lo conoces
+- ${userName ? `Usa el nombre del usuario: ${userName}` : 'Si no sabes el nombre, dirígete de forma genérica y amigable'}
 - Máximo 2-3 oraciones por respuesta
 - Pregunta específica para entender la necesidad
 - Sé cálido pero conciso
@@ -96,22 +96,25 @@ export const createDeepSeekService = () => {
     console.warn('API Key inválida o no encontrada. Usando servicio simulado.');
     // Retornar un mock service mejorado para desarrollo
     return {
-      sendMessage: async (message: string): Promise<DeepSeekResponse> => {
+      sendMessage: async (message: string, conversationHistory: ChatMessage[] = [], userName?: string | null): Promise<DeepSeekResponse> => {
         // Simular delay
         await new Promise(resolve => setTimeout(resolve, 800));
         
         // Respuestas simuladas más inteligentes y contextuales
         const lowerMessage = message.toLowerCase();
         
-        // Extraer nombre del usuario si se menciona
-        const nameMatch = message.match(/(?:me llamo|soy|mi nombre es|llámame)\s+([A-Za-zÁáÉéÍíÓóÚúÑñ]+)/i);
-        const userName = nameMatch ? nameMatch[1] : null;
+        // Usar el nombre pasado como parámetro, o extraerlo del mensaje si no está disponible
+        let currentUserName = userName;
+        if (!currentUserName) {
+          const nameMatch = message.match(/(?:me llamo|soy|mi nombre es|llámame)\s+([A-Za-zÁáÉéÍíÓóÚúÑñ]+)/i);
+          currentUserName = nameMatch ? nameMatch[1] : null;
+        }
         
         // Respuestas a saludos
         if (lowerMessage.includes('hola') || lowerMessage.includes('buenos días') || lowerMessage.includes('buenas')) {
-          if (userName) {
+          if (currentUserName) {
             return {
-              message: `¡Hola ${userName}! Me alegra conocerte. ¿En qué puedo ayudarte hoy?`
+              message: `¡Hola ${currentUserName}! Me alegra conocerte. ¿En qué puedo ayudarte hoy?`
             };
           } else {
             return {
@@ -122,42 +125,42 @@ export const createDeepSeekService = () => {
         
         // Respuestas específicas según el tipo de consulta
         if (lowerMessage.includes('sitio web') || lowerMessage.includes('página web')) {
-          const personalizedResponse = userName 
-            ? `¡Perfecto ${userName}! Creamos sitios web modernos y funcionales. ¿Qué tipo de empresa tienes?`
+          const personalizedResponse = currentUserName 
+            ? `¡Perfecto ${currentUserName}! Creamos sitios web modernos y funcionales. ¿Qué tipo de empresa tienes?`
             : `¡Perfecto! Creamos sitios web modernos y funcionales. ¿Qué tipo de empresa tienes?`;
           
           return { message: personalizedResponse };
         }
         
         if (lowerMessage.includes('tienda') || lowerMessage.includes('ecommerce') || lowerMessage.includes('ventas online')) {
-          const personalizedResponse = userName
-            ? `¡Excelente ${userName}! Desarrollamos tiendas online completas. ¿Qué productos vendes?`
+          const personalizedResponse = currentUserName
+            ? `¡Excelente ${currentUserName}! Desarrollamos tiendas online completas. ¿Qué productos vendes?`
             : `¡Excelente! Desarrollamos tiendas online completas. ¿Qué productos vendes?`;
           
           return { message: personalizedResponse };
         }
         
         if (lowerMessage.includes('precio') || lowerMessage.includes('costo') || lowerMessage.includes('cuánto')) {
-          const personalizedResponse = userName
-            ? `Los precios varían según cada proyecto, ${userName}. Para una cotización personalizada, escribe a contacto@ku-soluciones.cl`
+          const personalizedResponse = currentUserName
+            ? `Los precios varían según cada proyecto, ${currentUserName}. Para una cotización personalizada, escribe a contacto@ku-soluciones.cl`
             : `Los precios varían según cada proyecto. Para una cotización personalizada, escribe a contacto@ku-soluciones.cl`;
           
           return { message: personalizedResponse };
         }
         
         if (lowerMessage.includes('automatización') || lowerMessage.includes('procesos')) {
-          const personalizedResponse = userName
-            ? `¡La automatización optimiza tu empresa, ${userName}! ¿Qué procesos te gustaría automatizar?`
+          const personalizedResponse = currentUserName
+            ? `¡La automatización optimiza tu empresa, ${currentUserName}! ¿Qué procesos te gustaría automatizar?`
             : `¡La automatización optimiza tu empresa! ¿Qué procesos te gustaría automatizar?`;
           
           return { message: personalizedResponse };
         }
         
         // Respuesta general personalizada
-        const responses = userName ? [
-          `Entiendo, ${userName}. En Kü ayudamos con sitios web, tiendas online y automatización. ¿Qué necesitas específicamente?`,
-          `Gracias por contactarnos, ${userName}. ¿Podrías contarme más sobre tu empresa?`,
-          `Perfecto, ${userName}. Para más detalles, escribe a contacto@ku-soluciones.cl`
+        const responses = currentUserName ? [
+          `Entiendo, ${currentUserName}. En Kü ayudamos con sitios web, tiendas online y automatización. ¿Qué necesitas específicamente?`,
+          `Gracias por contactarnos, ${currentUserName}. ¿Podrías contarme más sobre tu empresa?`,
+          `Perfecto, ${currentUserName}. Para más detalles, escribe a contacto@ku-soluciones.cl`
         ] : [
           `En Kü ayudamos con sitios web, tiendas online y automatización. ¿Qué necesitas específicamente?`,
           `Gracias por contactarnos. ¿Podrías contarme más sobre tu empresa?`,

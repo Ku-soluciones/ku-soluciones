@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import SectionWrapper from './SectionWrapper';
 import { Card } from '../components/ui/Card';
+import { Button } from '../components/ui/Button';
 import { ServiceIconExample } from '../components/ui/Icon';
 import Breadcrumbs from '../components/ui/Breadcrumbs';
 import ServiceStructuredData from '../components/SEO/ServiceStructuredData';
+import FeatureIcon from '../components/ui/FeatureIcon';
+import SocialIcon from '../components/ui/SocialIcon';
 
 interface Service {
   id: string;
@@ -117,17 +120,23 @@ const ServicesSection: React.FC = () => {
           </p>
           <div className="grid md:grid-cols-3 gap-6 text-sm">
             <div className="bg-white dark:bg-gray-700 p-4 rounded-lg">
-              <div className="text-2xl mb-2">💰</div>
+              <div className="flex justify-center mb-2">
+                <FeatureIcon type="pricing" size="lg" className="text-pomegranate-600 dark:text-pomegranate-400" />
+              </div>
               <h4 className="font-semibold mb-1">Precios Pymes</h4>
               <p className="text-gray-600 dark:text-gray-400">Soluciones accesibles sin comprometer calidad</p>
             </div>
             <div className="bg-white dark:bg-gray-700 p-4 rounded-lg">
-              <div className="text-2xl mb-2">⚡</div>
+              <div className="flex justify-center mb-2">
+                <FeatureIcon type="speed" size="lg" className="text-pomegranate-600 dark:text-pomegranate-400" />
+              </div>
               <h4 className="font-semibold mb-1">Implementación Rápida</h4>
               <p className="text-gray-600 dark:text-gray-400">Resultados en semanas, no meses</p>
             </div>
             <div className="bg-white dark:bg-gray-700 p-4 rounded-lg">
-              <div className="text-2xl mb-2">🎯</div>
+              <div className="flex justify-center mb-2">
+                <FeatureIcon type="support" size="lg" className="text-pomegranate-600 dark:text-pomegranate-400" />
+              </div>
               <h4 className="font-semibold mb-1">Soporte Local</h4>
               <p className="text-gray-600 dark:text-gray-400">Atención en español, horario chileno</p>
             </div>
@@ -165,15 +174,16 @@ const ServicesSection: React.FC = () => {
                   <p className="text-sm text-gray-700 dark:text-gray-300 mb-3">
                     {service.details}
                   </p>
-                  <button
+                  <Button
+                    variant="primary"
                     onClick={() => {
                       const el = document.getElementById('final-cta');
                       if (el) el.scrollIntoView({ behavior: 'smooth' });
                     }}
-                    className="w-full bg-pomegranate-600 hover:bg-pomegranate-700 text-white text-sm font-semibold py-2 px-4 rounded-lg transition-colors duration-200"
+                    className="w-full px-6 py-3 text-sm font-semibold border-2 border-pomegranate-600 hover:border-pomegranate-700 transition-all duration-300"
                   >
                     Cotizar este servicio
-                  </button>
+                  </Button>
                 </div>
               )}
             </Card>
@@ -188,15 +198,17 @@ const ServicesSection: React.FC = () => {
           <p className="text-gray-600 dark:text-gray-300 mb-6">
             Desarrollamos soluciones digitales personalizadas para necesidades específicas de tu industria en Chile.
           </p>
-          <button
+          <Button
+            variant="primary"
             onClick={() => {
               const el = document.getElementById('final-cta');
               if (el) el.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="bg-pomegranate-600 hover:bg-pomegranate-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200"
+            className="px-10 py-4 text-lg font-semibold border-2 border-pomegranate-600 hover:border-pomegranate-700 transition-all duration-300 flex items-center gap-2 mx-auto justify-center"
           >
-            📞 Hablar con un especialista
-          </button>
+            <SocialIcon type="phone" size="sm" variant="minimal" className="text-white" />
+            Hablar con un especialista
+          </Button>
         </div>
       </SectionWrapper>
     </>

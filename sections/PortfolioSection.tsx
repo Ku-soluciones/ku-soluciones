@@ -2,7 +2,9 @@
 import React from 'react';
 import SectionWrapper from './SectionWrapper';
 import { Card } from '../components/ui/Card';
+import { Button } from '../components/ui/Button';
 import Breadcrumbs from '../components/ui/Breadcrumbs';
+import SocialIcon from '../components/ui/SocialIcon';
 
 const PortfolioSection: React.FC = () => {
   const projects = [
@@ -146,15 +148,17 @@ const PortfolioSection: React.FC = () => {
         <p className="text-gray-600 dark:text-gray-300 mb-6">
           Desarrollamos soluciones digitales personalizadas para necesidades específicas de tu industria en Chile.
         </p>
-        <button
+        <Button
+          variant="primary"
           onClick={() => {
             const el = document.getElementById('final-cta');
             if (el) el.scrollIntoView({ behavior: 'smooth' });
           }}
-          className="bg-pomegranate-600 hover:bg-pomegranate-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200"
+          className="px-10 py-4 text-lg font-semibold border-2 border-pomegranate-600 hover:border-pomegranate-700 transition-all duration-300 flex items-center gap-2 mx-auto justify-center"
         >
-          📞 Cotizar mi proyecto
-        </button>
+          <SocialIcon type="phone" size="sm" variant="minimal" className="text-white" />
+          Cotizar mi proyecto
+        </Button>
       </div>
     </SectionWrapper>
   );
