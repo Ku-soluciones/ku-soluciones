@@ -18,7 +18,7 @@ const OrganizationStructuredData: React.FC = () => {
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "customer service",
-        "telephone": "+56-9-1234-5678",
+        "telephone": "+56-9-8362-0169",
         "email": "contacto@ku-soluciones.cl",
         "availableLanguage": "Spanish"
       },

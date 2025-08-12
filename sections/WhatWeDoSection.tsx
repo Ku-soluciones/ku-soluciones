@@ -1,9 +1,11 @@
 import React from 'react';
 import { Container } from '../components/layout/Container';
 import { Button } from '../components/ui/Button';
+import SocialIcon from '../components/ui/SocialIcon';
+import ServiceIcon from '../components/ui/ServiceIcon';
 
 interface ServiceCard {
-  icon: string;
+  iconType: 'software' | 'automation' | 'analytics';
   title: string;
   description: string;
   features: string[];
@@ -12,19 +14,19 @@ interface ServiceCard {
 const WhatWeDoSection: React.FC = () => {
   const services: ServiceCard[] = [
     {
-      icon: '💻',
+      iconType: 'software',
       title: 'Software a medida para pymes',
       description: 'Desarrollamos aplicaciones web personalizadas que se adaptan a tu flujo de trabajo en Chile.',
       features: ['Sistemas de gestión empresarial', 'Aplicaciones web a medida', 'APIs personalizadas para Chile']
     },
     {
-      icon: '⚡',
+      iconType: 'automation',
       title: 'Automatización de procesos en Chile',
       description: 'Optimizamos tiempos con bots inteligentes, flujos automatizados e integraciones específicas para empresas chilenas.',
       features: ['Bots inteligentes para pymes', 'Flujos automatizados', 'Integraciones API para Chile']
     },
     {
-      icon: '📊',
+      iconType: 'analytics',
       title: 'Soluciones digitales personalizadas',
       description: 'Visualizamos tus métricas clave en tiempo real con dashboards adaptados a tu negocio.',
       features: ['Reportes en tiempo real', 'KPIs personalizados para Chile', 'Análisis predictivo empresarial']
@@ -50,8 +52,12 @@ const WhatWeDoSection: React.FC = () => {
               className="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-200 dark:border-gray-700"
             >
               {/* Icono */}
-              <div className="text-4xl mb-6 text-center">
-                {service.icon}
+              <div className="flex justify-center mb-6">
+                <ServiceIcon 
+                  type={service.iconType}
+                  size="xl"
+                  className="text-pomegranate-600 dark:text-pomegranate-400"
+                />
               </div>
 
               {/* Título */}
@@ -104,12 +110,14 @@ const WhatWeDoSection: React.FC = () => {
             </p>
             <Button
               variant="primary"
+              className="px-10 py-4 text-lg font-semibold border-2 border-pomegranate-600 hover:border-pomegranate-700 transition-all duration-300 flex items-center gap-2 mx-auto justify-center"
               onClick={() => {
                 const el = document.getElementById('final-cta');
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
               }}
             >
-              📞 Hablar con un especialista
+              <SocialIcon type="phone" size="sm" variant="minimal" className="text-white" />
+              Hablar con un especialista
             </Button>
           </div>
         </div>

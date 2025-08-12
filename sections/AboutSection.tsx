@@ -3,36 +3,37 @@ import React from 'react';
 import SectionWrapper from './SectionWrapper';
 import { Card } from '../components/ui/Card';
 import Breadcrumbs from '../components/ui/Breadcrumbs';
+import FeatureIcon from '../components/ui/FeatureIcon';
 
 const AboutSection: React.FC = () => {
   const values = [
     {
-      icon: '🎯',
+      iconType: 'target' as const,
       title: 'Desarrolladores Tecnológicos en Chile',
       description: 'Entendemos los desafíos específicos de las pequeñas y medianas empresas chilenas.'
     },
     {
-      icon: '⚡',
+      iconType: 'speed' as const,
       title: 'Implementación Rápida',
       description: 'Entregamos resultados en semanas, no meses. Tu tiempo es valioso.'
     },
     {
-      icon: '💰',
+      iconType: 'pricing' as const,
       title: 'Precios Accesibles',
       description: 'Soluciones digitales personalizadas de calidad sin el precio de las grandes consultoras.'
     },
     {
-      icon: '🤝',
+      iconType: 'support' as const,
       title: 'Soporte Local',
       description: 'Atención en español, horario chileno y acompañamiento continuo.'
     }
   ];
 
   const industries = [
-    { name: 'Logística Chile', icon: '🚚', description: 'Sistemas de tracking y gestión de flotas' },
-    { name: 'Retail Nacional', icon: '🛍️', description: 'E-commerce y gestión de inventarios' },
-    { name: 'Manufactura', icon: '🏭', description: 'Automatización de procesos productivos' },
-    { name: 'Servicios', icon: '💼', description: 'Software de gestión empresarial' }
+    { name: 'Logística Chile', iconType: 'logistics' as const, description: 'Sistemas de tracking y gestión de flotas' },
+    { name: 'Retail Nacional', iconType: 'retail' as const, description: 'E-commerce y gestión de inventarios' },
+    { name: 'Manufactura', iconType: 'manufacturing' as const, description: 'Automatización de procesos productivos' },
+    { name: 'Servicios', iconType: 'services' as const, description: 'Software de gestión empresarial' }
   ];
 
   return (
@@ -85,7 +86,13 @@ const AboutSection: React.FC = () => {
         <div className="grid grid-cols-2 gap-4">
           {values.map((value, index) => (
             <Card key={index} className="text-center p-6">
-              <div className="text-3xl mb-3">{value.icon}</div>
+              <div className="flex justify-center mb-3">
+                <FeatureIcon 
+                  type={value.iconType}
+                  size="lg"
+                  className="text-pomegranate-600 dark:text-pomegranate-400"
+                />
+              </div>
               <h4 className="font-semibold text-gray-800 dark:text-white mb-2">{value.title}</h4>
               <p className="text-sm text-gray-600 dark:text-gray-400">{value.description}</p>
             </Card>
@@ -106,7 +113,13 @@ const AboutSection: React.FC = () => {
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
         {industries.map((industry, index) => (
           <Card key={index} className="text-center p-6 hover:shadow-lg transition-shadow duration-300">
-            <div className="text-4xl mb-4">{industry.icon}</div>
+            <div className="flex justify-center mb-4">
+              <FeatureIcon 
+                type={industry.iconType}
+                size="xl"
+                className="text-pomegranate-600 dark:text-pomegranate-400"
+              />
+            </div>
             <h4 className="font-semibold text-gray-800 dark:text-white mb-2">{industry.name}</h4>
             <p className="text-sm text-gray-600 dark:text-gray-400">{industry.description}</p>
           </Card>
