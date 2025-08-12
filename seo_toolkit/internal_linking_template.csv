@@ -1,0 +1,4 @@
+origen_url,origen_anchor,destino_url,destino_anchor,tipo,prioridad,estado
+"/pilar","[tema principal]","/cluster-1","[subtema 1]","contextual","alta","pendiente"
+"/cluster-1","[subtema 1]","/cluster-2","[subtema 2]","contextual","media","pendiente"
+"/cluster-2","comparativa de [tema]","/pilar","guía de [tema]","breadcrumb/TOC","alta","pendiente"

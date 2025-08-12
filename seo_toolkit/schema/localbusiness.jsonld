@@ -1,0 +1,39 @@
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "REPLACE_WITH_BUSINESS_NAME",
+  "image": [
+    "https://tudominio.com/path/to/photo1.jpg"
+  ],
+  "@id": "https://tudominio.com/#business",
+  "url": "https://tudominio.com/",
+  "telephone": "+34 000 000 000",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Calle Ejemplo 123",
+    "addressLocality": "Ciudad",
+    "postalCode": "00000",
+    "addressCountry": "ES"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 40.4168,
+    "longitude": -3.7038
+  },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "opens": "09:00",
+    "closes": "18:00"
+  }],
+  "sameAs": [
+    "https://www.google.com/maps?cid=REPLACE",
+    "https://www.facebook.com/REPLACE"
+  ]
+}

@@ -1,0 +1,5 @@
+fecha,tema,keyword_principal,tipo_contenido,titulo_propuesto,h2_propuestos,objetivo,enlaces_internos_sugeridos,estado
+"2025-08-19","Pilar: Tema principal","","Guía/Long-form","Guía completa de [tema]: desde cero a experto","H2: Conceptos clave | H2: Pasos | H2: Herramientas | H2: FAQs","Posicionar pilar y captar enlaces","/pilar -> /subtema-1 | /subtema-2","pendiente"
+"2025-08-22","Cluster 1","","Artículo/How-to","Cómo [lograr X] en [tiempo] sin [dolor]","H2: Paso 1 | H2: Paso 2 | H2: Errores comunes","Captar long-tail y apoyar pilar","/pilar | /subtema-2","pendiente"
+"2025-08-26","Cluster 2","","Comparativa/Lista","[X] mejores [herramientas/estrategias] para [público] en [año]","H2: Criterios | H2: Comparativa | H2: Recomendación","Rankear comparativas, captar afiliación si aplica","/pilar | /subtema-1","pendiente"
+"2025-08-29","Cluster 3","","Guía/Checklist","Checklist de [tema]: pasos y plantillas","H2: Preparación | H2: Ejecución | H2: Verificación","Responder intención práctica","/pilar | /cluster-1","pendiente"
